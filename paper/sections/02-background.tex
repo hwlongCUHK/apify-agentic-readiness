@@ -1,0 +1,99 @@
+% !TEX root = ../main.tex
+\section{Related Work}
+\label{sec:background}
+
+This section situates our study within two bodies of prior work: empirical
+studies of software marketplaces and platform governance, and research on
+interaction modality and dual-audience design.
+
+%% ─────────────────────────────────────────────
+\subsection{Software Marketplaces and Platform Governance}
+\label{sec:rw:marketplace}
+
+A substantial body of work examines software marketplaces, primarily mobile app
+stores: sales rank strongly shapes mobile-app demand
+\cite{ghose2014apppricing}, platform-owner entry into complementor markets
+induces complementor responses
+\cite{wen2019platformowner}, and app updates and category positioning predict
+adoption better than review scores \cite{janssen2022googleplay}, while update
+management is a strategic lever that differs across app stores
+\cite{comino2019appstore}. More recently,
+\citet{su2024gptstore} documents the OpenAI GPT Store's extreme concentration
+and ``supply without demand,'' and \citet{stein2026mcpecosystem} documents the
+MCP ecosystem's reshaping of developer effort. Platform governance research
+\cite{rietveld2021platform} explains how such outcomes arise: certification can
+amplify concentration by disproportionately benefiting already-popular apps
+\cite{rietveld2021marketorchestrators};
+boundary resources mediate the owner--complementor relationship
+\cite{eaton2015governance,tiwana2015platformecosystems}; and two-sided market
+theory \cite{rochet2003twosided} and network effects \cite{caillaud2003chicken}
+explain winner-take-all dynamics, with \citet{boudreau2012complementors} showing
+that more complementors can reduce individual incentives even as aggregate
+value rises. Concentration is standardly measured with Gini coefficients and
+HHI, as in analyses of the GPT Store \cite{su2024gptstore}, and the
+``superstar'' phenomenon is well-documented
+\cite{aguiar2018platforms}. These studies establish heavy-tailed adoption and
+platform design effects, but none examines automation marketplaces, or whether
+design decisions that introduce new consumption modalities (such as agentic
+access) are associated with redistributed concentration.
+
+%% ─────────────────────────────────────────────
+\subsection{Agents as Users and Dual-Audience Design}
+\label{sec:rw:agentic}
+
+The term ``agentic economy'' describes the emerging ecosystem in which AI
+agents act as autonomous consumers of digital services---discovering tools,
+negotiating access, executing tasks, and making payments without continuous
+human oversight. Governing such agentic systems is an emerging policy concern
+\cite{shavit2023practices}. This shift is enabled by large
+language models (LLMs) with tool-use capabilities
+\cite{schick2023toolformer,qin2024toolllm}, standardized tool-calling protocols
+such as MCP---now spanning a large tool ecosystem
+\cite{stein2026mcpecosystem}---and JSON-schema-based function calling
+\cite{openai2024function}, and payment infrastructure that permits
+machine-initiated transactions.
+
+For automation marketplaces, the agentic transition is a change in
+\emph{interaction modality}: where a human once browsed a catalog, filled a
+form, and clicked run, an agent now discovers via semantic search, generates
+parameters from a schema, and pays through pre-authorized billing. These
+changes may favor tools that are well-documented and schema-rich.
+
+We treat this modality transition as the paper's theoretical object of study,
+rather than as background context, and ground it in four intersecting HCI
+lineages.
+
+\emph{Human--AI interaction.} Work on human--AI collaboration establishes
+guidelines for systems that collaborate with users \cite{amershi2019guidelines}
+and examines how humans and agents negotiate roles beyond a linear
+``user specifies, agent executes'' model \cite{zhou2024nonlinear}. Our setting
+asks what changes when the ``user'' is itself an agent.
+
+\emph{Agents as users, and machine legibility.} A growing literature treats AI
+agents as end-users with their own needs: interface design alone drives large
+performance gains for agents \cite{yang2024sweagent}. API usability research
+establishes that interfaces demand explicit design for their users
+\cite{myers2016api}; extending this principle to machine consumers suggests
+that interfaces built for one audience can become illegible to another. These
+motivate our question of whether a \emph{payment-eligibility signal} is
+associated with measurable adoption differences.
+
+\emph{Developer experience and mediated work.} Developer experience (DevEx) work
+\cite{fagerholm2012developer,weisz2025codeassistant} and algorithmic-mediation
+research \cite{eslami2015algorithmic,lee2015working} show that platforms
+designed for one population can be illegible to another, and recommendation
+systems have been framed as requiring fairness across multiple stakeholder
+groups \cite{burke2017multisided}---direct concerns for a marketplace whose
+audience is now heterogeneous.
+
+\emph{Hybrid intelligence and automation paradigms.} Hybrid-intelligence
+research frames human--AI collaboration as a division of labor
+\cite{dellermann2019hybrid}, and automation-paradigm studies show that
+``do it for me'' versus ``do it with me'' is a design decision with distinct
+consequences for control and trust \cite{khurana2025doitforme}. Our paper asks
+what a design decision optimizing for one modality does to the other.
+
+Apify's agentic-readiness boundary is a concrete instance of such a design
+decision: it admits tools with limited permissions and no standby mode to
+agent-initiated use. Whether this readiness is associated with measurable
+adoption differences is the empirical question this paper studies.

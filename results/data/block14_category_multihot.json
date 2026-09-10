@@ -1,0 +1,35 @@
+{
+  "n_ppe_actors": 51861,
+  "multi_category_share_pct": 84.4,
+  "n_categories_threshold": 19,
+  "bonferroni_alpha": 0.00263,
+  "targets": [
+    {
+      "category": "AI",
+      "primary_coef": 0.2091,
+      "primary_p": 4.4753637147811815e-14,
+      "multihot_coef": 0.3054,
+      "multihot_p": 8.399534905748548e-44,
+      "multihot_n_actors": 7095,
+      "bonferroni_survives": true
+    },
+    {
+      "category": "SOCIAL_MEDIA",
+      "primary_coef": 0.171,
+      "primary_p": 4.709032080560169e-07,
+      "multihot_coef": 0.1958,
+      "multihot_p": 4.556994784992471e-15,
+      "multihot_n_actors": 8782,
+      "bonferroni_survives": true
+    },
+    {
+      "category": "LEAD_GENERATION",
+      "primary_coef": 0.0815,
+      "primary_p": 0.0004649044678213,
+      "multihot_coef": 0.0549,
+      "multihot_p": 0.00030127677108944913,
+      "multihot_n_actors": 18614,
+      "bonferroni_survives": true
+    }
+  ]
+}

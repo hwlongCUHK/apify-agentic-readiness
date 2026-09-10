@@ -1,0 +1,65 @@
+{
+  "architecture_2x2": {
+    "FULL_PERMISSIONS": {
+      "standby": {
+        "n": 57,
+        "mean_monthly_users": 4.58,
+        "median_monthly_users": 1.0
+      },
+      "non_standby": {
+        "n": 1602,
+        "mean_monthly_users": 8.56,
+        "median_monthly_users": 1.0
+      }
+    },
+    "LIMITED_PERMISSIONS": {
+      "standby": {
+        "n": 926,
+        "mean_monthly_users": 10.28,
+        "median_monthly_users": 1.0
+      },
+      "non_standby": {
+        "n": 50917,
+        "mean_monthly_users": 14.31,
+        "median_monthly_users": 1.0
+      }
+    },
+    "ready_cell": "LIMITED_PERMISSIONS x non_standby"
+  },
+  "within_developer_fe": {
+    "n_developers": 343,
+    "n_actors": 16537,
+    "limited_vs_full": {
+      "coef": 0.69,
+      "se": 0.11,
+      "p": 3.5368884278509835e-10,
+      "pct": 99.4
+    },
+    "standby_vs_nonstandby": {
+      "coef": -0.274,
+      "se": 0.1018,
+      "p": 0.007118565576058047,
+      "pct": -24.0
+    },
+    "three_dummies_ref_ready": {
+      "full_nonstandby": {
+        "coef": -0.6936,
+        "se": 0.1112,
+        "p": 4.4728198655724095e-10,
+        "pct": -50.0
+      },
+      "full_standby": {
+        "coef": -0.796,
+        "se": 0.5015,
+        "p": 0.11247522754165112,
+        "pct": -54.9
+      },
+      "limited_standby": {
+        "coef": -0.2786,
+        "se": 0.1059,
+        "p": 0.008531432935422764,
+        "pct": -24.3
+      }
+    }
+  }
+}

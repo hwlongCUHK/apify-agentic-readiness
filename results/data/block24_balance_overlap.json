@@ -1,0 +1,35 @@
+{
+  "n_eligible": 50917,
+  "n_non_eligible": 2585,
+  "ratio": 19.7,
+  "balance_smd": {
+    "log_age": {
+      "smd_before": -0.898,
+      "smd_after": 0.229
+    },
+    "desc_length": {
+      "smd_before": 0.19,
+      "smd_after": -0.228
+    },
+    "dev_portfolio_size": {
+      "smd_before": 0.344,
+      "smd_after": 0.293
+    }
+  },
+  "ps_treated": {
+    "mean": 0.956,
+    "min": 0.135,
+    "p10": 0.903,
+    "median": 0.975,
+    "p90": 0.994,
+    "max": 1.0
+  },
+  "ps_control": {
+    "mean": 0.849,
+    "min": 0.144,
+    "p10": 0.668,
+    "median": 0.892,
+    "p90": 0.979,
+    "max": 0.999
+  }
+}

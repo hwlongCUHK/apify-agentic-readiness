@@ -1,0 +1,5 @@
+tier,n_developers,total_actors,avg_pct_agentic
+Solo (1),2732,2732,78.8
+Boutique (2-9),2145,8265,88.5
+Mid (10-99),787,21283,94.3
+Whale (100+),125,35329,97.9

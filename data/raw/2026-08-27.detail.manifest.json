@@ -1,0 +1,11 @@
+{
+  "crawl_date": "2026-08-27",
+  "detail_file": "/Users/darrenlong/Desktop/Apify Project/data/raw/2026-08-27.detail.jsonl.gz",
+  "n_actors": 53902,
+  "n_requested": 53887,
+  "n_errors": 0,
+  "pricing_model_scope": "PAY_PER_EVENT",
+  "started_at": "2026-08-28T16:28:43.098539+00:00",
+  "finished_at": "2026-08-28T20:52:20.844555+00:00",
+  "seconds": 15817.7
+}

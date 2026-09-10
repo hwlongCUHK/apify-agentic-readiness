@@ -1,0 +1,24 @@
+\begin{table}[t]
+  \centering
+  \caption{Concentration: agentic-ready versus non-agentic-ready actors.}
+  \label{tab:eligibility_concentration}
+  \small
+  \begin{tabular}{lcc}
+    \toprule
+    Metric & Agentic-ready & Non-agentic-ready \\
+    \midrule
+    Gini coefficient & 0.935 & 0.946 \\
+    Top 1\% user share & 76.8\% & 74.3\% \\
+    Top 5\% user share & 88.7\% & 88.5\% \\
+    Top 10\% user share & 92.5\% & 92.4\% \\
+    Theil index (total) & 4.13 & 3.35 \\
+    Between-category share & 13.1\% & 13.3\% \\
+    \bottomrule
+    \multicolumn{3}{l}{\footnotesize Within-category Gini higher for agentic-ready in 7 of 15 categories.} \\
+    \multicolumn{3}{l}{\footnotesize Bootstrap 95\% CIs for the ready $-$ non-ready difference: Gini $[-0.04, 0.04]$;} \\
+    \multicolumn{3}{l}{\footnotesize top-1\% $[-8.7, 25.8]$ pp; top-5\% $[-5.4, 11.7]$ pp; top-10\% $[-3.5, 7.7]$ pp;} \\
+    \multicolumn{3}{l}{\footnotesize Theil $[0.07, 2.13]$ (the Theil gap reflects the larger, longer-tailed ready group).} \\
+    \multicolumn{3}{l}{\footnotesize Sample-size-equalized (ready downsampled to 2{,}585): Gini CI $[0.85, 0.97]$,} \\
+    \multicolumn{3}{l}{\footnotesize top-1\% $[48.3, 89.3]$ pp, Theil $[2.15, 5.33]$---all contain the non-ready values.}
+  \end{tabular}
+\end{table}

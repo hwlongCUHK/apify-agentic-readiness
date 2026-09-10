@@ -1,0 +1,67 @@
+{
+  "duplicate_rows": 0,
+  "total_actors_panel": 62819,
+  "actors_present_all_days": 61088,
+  "coverage_pct": 97.24,
+  "daily_counts": {
+    "2026-08-19": 61287,
+    "2026-08-20": 61492,
+    "2026-08-21": 61879,
+    "2026-08-22": 62324,
+    "2026-08-23": 62645
+  },
+  "agentic_flag_flippers": 186,
+  "pricing_model_changers": 318,
+  "missing_data": [
+    {
+      "date": "2026-08-19",
+      "n": 61287,
+      "null_monthly_users": 0,
+      "null_runs_30d": 1970,
+      "null_rating": 0,
+      "null_builds": 0,
+      "null_categories": 0
+    },
+    {
+      "date": "2026-08-20",
+      "n": 61492,
+      "null_monthly_users": 0,
+      "null_runs_30d": 1713,
+      "null_rating": 0,
+      "null_builds": 0,
+      "null_categories": 0
+    },
+    {
+      "date": "2026-08-21",
+      "n": 61879,
+      "null_monthly_users": 0,
+      "null_runs_30d": 1760,
+      "null_rating": 0,
+      "null_builds": 0,
+      "null_categories": 0
+    },
+    {
+      "date": "2026-08-22",
+      "n": 62324,
+      "null_monthly_users": 0,
+      "null_runs_30d": 1743,
+      "null_rating": 0,
+      "null_builds": 0,
+      "null_categories": 0
+    },
+    {
+      "date": "2026-08-23",
+      "n": 62645,
+      "null_monthly_users": 0,
+      "null_runs_30d": 1758,
+      "null_rating": 0,
+      "null_builds": 0,
+      "null_categories": 0
+    }
+  ],
+  "ppe_actors_missing_event_detail": 0,
+  "verdict": "ISSUES",
+  "issues": [
+    "186 actors with unstable agentic flag"
+  ]
+}

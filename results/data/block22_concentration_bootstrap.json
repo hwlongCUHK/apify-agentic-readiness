@@ -1,0 +1,83 @@
+{
+  "observed": {
+    "eligible": {
+      "n": 50917,
+      "gini": 0.935,
+      "top_1pct": 76.8,
+      "top_5pct": 88.7,
+      "top_10pct": 92.5,
+      "theil": 4.13
+    },
+    "non_eligible": {
+      "n": 2585,
+      "gini": 0.946,
+      "top_1pct": 74.3,
+      "top_5pct": 88.5,
+      "top_10pct": 92.4,
+      "theil": 3.35
+    }
+  },
+  "downsampled_eligible_to_non_eligible_size": {
+    "n_non_eligible": 2585,
+    "n_draws": 2000,
+    "metrics": {
+      "gini": {
+        "mean": 0.922,
+        "ci95_low": 0.852,
+        "ci95_high": 0.97
+      },
+      "top_1pct": {
+        "mean": 72.192,
+        "ci95_low": 48.277,
+        "ci95_high": 89.261
+      },
+      "top_5pct": {
+        "mean": 86.372,
+        "ci95_low": 73.851,
+        "ci95_high": 94.833
+      },
+      "top_10pct": {
+        "mean": 90.944,
+        "ci95_low": 82.459,
+        "ci95_high": 96.554
+      },
+      "theil": {
+        "mean": 3.696,
+        "ci95_low": 2.152,
+        "ci95_high": 5.327
+      }
+    }
+  },
+  "difference_bootstrap_ci": {
+    "gini": {
+      "mean_diff": -0.006,
+      "ci95_low": -0.036,
+      "ci95_high": 0.043,
+      "zero_in_ci": true
+    },
+    "top_1pct": {
+      "mean_diff": 4.493,
+      "ci95_low": -8.741,
+      "ci95_high": 25.756,
+      "zero_in_ci": true
+    },
+    "top_5pct": {
+      "mean_diff": 1.339,
+      "ci95_low": -5.36,
+      "ci95_high": 11.7,
+      "zero_in_ci": true
+    },
+    "top_10pct": {
+      "mean_diff": 0.84,
+      "ci95_low": -3.488,
+      "ci95_high": 7.685,
+      "zero_in_ci": true
+    },
+    "theil": {
+      "mean_diff": 0.916,
+      "ci95_low": 0.073,
+      "ci95_high": 2.126,
+      "zero_in_ci": false
+    }
+  }
+}

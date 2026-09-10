@@ -1,0 +1,46 @@
+{
+  "T1": {
+    "total_actors": 67609,
+    "total_developers": 5789,
+    "n_ppe": 57032.0,
+    "n_rental": 5364.0,
+    "n_free": 5213.0,
+    "avg_monthly_users": 12.19,
+    "median_monthly_users": 1.0,
+    "avg_runs_30d": 3340.71,
+    "median_runs_30d": 29.0,
+    "avg_rating": 0.509,
+    "avg_bookmarks": 1.87,
+    "avg_builds": 17.19,
+    "avg_reviews": 0.45,
+    "n_agentic": 50917,
+    "n_non_agentic": 2585,
+    "pct_agentic": 95.2
+  },
+  "T2": [
+    {
+      "tier": "Solo (1)",
+      "n_developers": 2732,
+      "total_actors": 2732,
+      "avg_pct_agentic": 78.8
+    },
+    {
+      "tier": "Boutique (2-9)",
+      "n_developers": 2145,
+      "total_actors": 8265,
+      "avg_pct_agentic": 88.5
+    },
+    {
+      "tier": "Mid (10-99)",
+      "n_developers": 787,
+      "total_actors": 21283,
+      "avg_pct_agentic": 94.3
+    },
+    {
+      "tier": "Whale (100+)",
+      "n_developers": 125,
+      "total_actors": 35329,
+      "avg_pct_agentic": 97.9
+    }
+  ]
+}

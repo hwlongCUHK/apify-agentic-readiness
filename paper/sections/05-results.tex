@@ -1,0 +1,151 @@
+% !TEX root = ../main.tex
+\section{Results}
+\label{sec:results}
+
+Results are organized by research question. Within-developer fixed-effects
+models and per-category regressions both cluster standard errors at the
+developer level. The full PPE sample has $N = 53{,}502$ actors with architecture
+fields (50{,}917 agentic-ready); we report both equal-developer-weighted and
+actor-weighted fixed-effects estimates.
+
+%% ─────────────────────────────────────────────
+\subsection{RQ1: Agentic Readiness and Adoption}
+\label{sec:results:rq1}
+
+Agentic-ready tools are adopted far more than non-agentic-ready tools,
+identified among the 343 mixed developers who publish both tool types.
+\autoref{tab:eligibility_fe} reports the within-developer fixed-effects
+estimates. Within the same developer, agentic-ready tools attract
+$\hat\beta = 0.540$ more on the log-plus-one scale (SE $= 0.083$,
+$p < 10^{-10}$), i.e., \textbf{71.5\% more on the $(1 + \text{monthly\_users})$
+scale} than non-agentic-ready tools under equal-developer weighting. The
+actor-weighted estimate is smaller but still large and significant
+($\hat\beta = 0.334$, 39.6\%, $p < 10^{-6}$). The divergence between the two estimands indicates the gap is
+not uniform across developers: larger portfolios---whose many tools dominate
+actor weighting---exhibit smaller within-developer gaps. We treat the
+equal-developer-weighted estimate as primary, since it answers the
+within-developer question without letting a few large portfolios dominate.
+
+\input{tables/T21}
+
+The association is not specific to the monthly-user count. On the secondary
+outcome $\log(1 + \texttt{runs\_30d})$---the intensity of tool usage---the
+within-developer estimate is $+214\%$ (equal-developer-weighted,
+$p < 10^{-17}$) and $+108\%$ (actor-weighted, $p < 10^{-5}$), consistent with
+and larger than the breadth result.
+
+The association is robust. Excluding whale developers ($\geq$100 PPE actors) leaves
+the equal-developer-weighted estimate essentially unchanged ($\hat\beta = 0.558$,
+74.6\%, $p < 10^{-9}$). Adding further listing-time tool-level covariates---log
+price, log build count, and the number of pricing events---also leaves the
+estimate essentially unchanged (71.5\% to 77.5\%, $p < 10^{-10}$), so the
+association is not explained by observable tool-level differences in price or
+developer effort. Propensity-score weighting on listing-time covariates
+yields estimates of 17\%--24\% depending on the estimator
+(\autoref{tab:eligibility_psm}), all positive. These estimates provide directional
+triangulation; the
+treated-to-control ratio is 19.7:1, and the 2{,}585 non-agentic-ready tools are
+systematically older than agentic-ready tools (standardized difference in log
+age $-0.90$ before weighting, only partly corrected to $+0.23$ after), with balance diagnostics confirming that the within-developer design remains the better-balanced comparison.
+
+Because ``agentic-ready'' is a conjunction of two architecture choices, the
+non-agentic-ready group mixes three configurations. To check whether the gap is
+driven by one of them---in particular, by standby mode marking a different,
+more enterprise tool type---we decompose the architecture into four cells
+(\autoref{tab:architecture_2x2}). Within the same developer, the gap is not
+confined to standby: relative to ready (limited, non-standby) tools,
+full-permission tools are 50\%--56\% lower in adoption and standby-only tools
+24\% lower, so the premium is carried by the permission dimension, with standby
+a smaller, secondary contributor.
+
+\input{tables/T27}
+
+The association also survives restricting to tools with a full exposure window:
+equal-developer-weighted estimates are $+73.0\%$ for tools at least 30 days old,
+$+89.2\%$ for tools at least 90 days old, and $+61.6\%$ ($p = 0.002$) for tools
+at least 180 days old; replacing $\log(\text{age})$
+with age-bin fixed effects leaves the estimate at $+69.5\%$. Across the 343
+mixed developers, 65.3\% have a positive within-developer ready--non-ready gap
+(median $+0.35$ log points), so the result is not driven by a few developers.
+
+To address the concern that agentic-ready and non-agentic-ready tools are simply
+different tool types, we match each ready tool to its most similar non-ready
+tool within the same developer (\autoref{sec:methods}). Matching improves
+covariate balance (log-age standardized difference $-0.90$ to $-0.30$) and
+leaves a positive mean premium of roughly 29\% (developer-clustered bootstrap
+95\% CI $[0.06, 0.44]$
+log points, versus 72\% unmatched): the adoption premium persists after matching,
+though it is attenuated, and the median matched gap is zero with
+only 47\% of pairs favoring the ready tool, indicating heterogeneity across
+developer--tool pairs.
+
+Because the log-plus-one transform compresses the multiplicative gap near zero
+(the median tool has one monthly user), we also fit a Poisson pseudo-maximum-
+likelihood model with developer fixed effects, which estimates the gap on the
+monthly-user count scale directly. The equal-developer-weighted incidence-rate
+ratio is 8.6 ($p = 0.012$), confirming a large count-scale gap among typical
+portfolios. The actor-weighted IRR is 2.2 and no longer
+statistically significant ($p = 0.268$), reflecting the
+disproportionate influence of a few large portfolios whose ready and non-ready
+tools are closer in absolute counts. The two magnitudes
+describe the same gap at different points of a heavily skewed distribution: the
+median tool has one user regardless of readiness, so the log-plus-one estimate
+($+40\%$ to $+72\%$) moves the median tool from one to roughly two users. The adoption gap is thus large on the
+count scale for most developers, not an artifact of the transform.
+
+\input{tables/T24}
+
+%% ─────────────────────────────────────────────
+\subsection{RQ2: The Margin of Adoption}
+\label{sec:results:rq2}
+
+The association appears on both the extensive and conditional intensive
+margins (\autoref{tab:eligibility_margins}). On the extensive margin,
+agentic-ready tools are \textbf{16.5 percentage points more likely to have any
+monthly users} ($p < 10^{-6}$). Conditional on having users, the intensive-margin
+association remains large and significant: agentic-ready tools attract
+\textbf{60.2\% more} ($p < 10^{-4}$). Entering the top decile is also more
+likely for agentic-ready tools ($+10.1$ pp, $p < 10^{-6}$). The association is
+thus visible on both margins, consistent with readiness operating through both
+discovery and scaling. This two-part decomposition locates where the association appears;
+because readiness
+itself predicts crossing the zero threshold, the conditional sample of tools
+with any users differs in composition between the two groups, so the
+intensive-margin estimate is conditional on that selection. Separating agent-mediated from
+developer-mediated pathways requires agent-side data (\autoref{fig:mechanism}).
+
+\input{tables/T22}
+
+%% ─────────────────────────────────────────────
+\subsection{RQ3: Category Heterogeneity and Adoption Inequality}
+\label{sec:results:rq3}
+
+\subsubsection{Category heterogeneity.}
+
+The association is positive across most categories in tool-level regressions
+(7 of 15 primary-category and 12 of 18 multi-hot are Bonferroni-significant;
+\autoref{tab:eligibility_category}). Under developer fixed effects the Ready $\times$ Category interaction is jointly
+significant ($F = 6.74$, $p < 10^{-16}$), confirming category-level heterogeneity.
+The gradient reorders relative to the tool-level estimates---Agents and AI lose their tool-level
+prominence within developer---so the category variation reflects heterogeneity
+rather than support for a specific consumer-type mechanism.
+
+\input{tables/T23}
+
+\subsubsection{Within-group adoption inequality.}
+
+We find no robust evidence that adoption is more concentrated among
+agentic-ready tools (\autoref{tab:eligibility_concentration}). The Gini
+coefficient (the standard scale-invariant measure) is nearly identical across
+the two sets (0.935 versus 0.946), with a bootstrap 95\% CI for the difference
+of $[-0.04, 0.04]$, narrow around zero; within-category, agentic-ready tools
+have a higher Gini in only 7 of 15 categories. There is no reliable evidence of a top-share difference: the face-value gap
+(top-1\% 76.8\% versus 74.3\%) has a bootstrap CI of $[-8.7, 25.8]$ pp, consistent with
+both no difference and a large one. The total Theil index is higher among
+agentic-ready tools (4.13 versus 3.35), but this reflects the agentic-ready
+group's larger size and longer tail, and it is no longer distinguishable once
+the agentic-ready group is downsampled to the non-agentic-ready size. We
+therefore find no detectable concentration premium in the observed readiness
+sets.
+
+\input{tables/T25}

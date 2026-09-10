@@ -1,0 +1,13 @@
+{
+  "n_matched": 11824,
+  "match_rate_pct": 29.9,
+  "auc": 0.631,
+  "att_1to1": 0.1042,
+  "att_1to1_pct": 11.0,
+  "att_replacement": 0.1291,
+  "att_replacement_pct": 13.8,
+  "att_overlap": 0.1475,
+  "att_overlap_pct": 15.9,
+  "att_iptw": 0.1361,
+  "att_iptw_pct": 14.6
+}

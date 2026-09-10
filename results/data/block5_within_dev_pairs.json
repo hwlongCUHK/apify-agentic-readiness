@@ -1,0 +1,128 @@
+{
+  "T8": [
+    {
+      "dev_type": "Mixed",
+      "tier": "Boutique (2-9)",
+      "n_devs": 536,
+      "total_actors": 2386.0,
+      "avg_pct_agentic": 53.7,
+      "avg_mu_per_actor": 30.9,
+      "avg_builds_per_actor": 24.0
+    },
+    {
+      "dev_type": "Mixed",
+      "tier": "Mid (10-99)",
+      "n_devs": 354,
+      "total_actors": 11039.0,
+      "avg_pct_agentic": 61.1,
+      "avg_mu_per_actor": 20.1,
+      "avg_builds_per_actor": 23.4
+    },
+    {
+      "dev_type": "Mixed",
+      "tier": "Whale (100+)",
+      "n_devs": 77,
+      "total_actors": 24017.0,
+      "avg_pct_agentic": 61.5,
+      "avg_mu_per_actor": 25.7,
+      "avg_builds_per_actor": 19.4
+    },
+    {
+      "dev_type": "Pure Agentic",
+      "tier": "Solo (1)",
+      "n_devs": 971,
+      "total_actors": 971.0,
+      "avg_pct_agentic": 100.0,
+      "avg_mu_per_actor": 8.0,
+      "avg_builds_per_actor": 18.5
+    },
+    {
+      "dev_type": "Pure Agentic",
+      "tier": "Boutique (2-9)",
+      "n_devs": 809,
+      "total_actors": 3109.0,
+      "avg_pct_agentic": 100.0,
+      "avg_mu_per_actor": 17.9,
+      "avg_builds_per_actor": 18.5
+    },
+    {
+      "dev_type": "Pure Agentic",
+      "tier": "Mid (10-99)",
+      "n_devs": 253,
+      "total_actors": 5935.0,
+      "avg_pct_agentic": 100.0,
+      "avg_mu_per_actor": 22.1,
+      "avg_builds_per_actor": 26.1
+    },
+    {
+      "dev_type": "Pure Agentic",
+      "tier": "Whale (100+)",
+      "n_devs": 25,
+      "total_actors": 6014.0,
+      "avg_pct_agentic": 100.0,
+      "avg_mu_per_actor": 2.3,
+      "avg_builds_per_actor": 9.3
+    },
+    {
+      "dev_type": "Pure Traditional",
+      "tier": "Solo (1)",
+      "n_devs": 1611,
+      "total_actors": 1611.0,
+      "avg_pct_agentic": 0.0,
+      "avg_mu_per_actor": 1.8,
+      "avg_builds_per_actor": 18.8
+    },
+    {
+      "dev_type": "Pure Traditional",
+      "tier": "Boutique (2-9)",
+      "n_devs": 636,
+      "total_actors": 2127.0,
+      "avg_pct_agentic": 0.0,
+      "avg_mu_per_actor": 5.8,
+      "avg_builds_per_actor": 15.6
+    },
+    {
+      "dev_type": "Pure Traditional",
+      "tier": "Mid (10-99)",
+      "n_devs": 128,
+      "total_actors": 3409.0,
+      "avg_pct_agentic": 0.0,
+      "avg_mu_per_actor": 1.4,
+      "avg_builds_per_actor": 8.6
+    },
+    {
+      "dev_type": "Pure Traditional",
+      "tier": "Whale (100+)",
+      "n_devs": 11,
+      "total_actors": 2027.0,
+      "avg_pct_agentic": 0.0,
+      "avg_mu_per_actor": 1.9,
+      "avg_builds_per_actor": 10.0
+    }
+  ],
+  "within_dev_pairs": {
+    "n_mixed_developers": 682,
+    "comparison": [
+      {
+        "agentic": false,
+        "n": 8394,
+        "avg_mu": 5.06,
+        "med_mu": 1.0,
+        "avg_runs": 685.14,
+        "med_runs": 30.0,
+        "avg_builds": 10.5,
+        "avg_bookmarks": 0.92
+      },
+      {
+        "agentic": true,
+        "n": 19069,
+        "avg_mu": 21.4,
+        "med_mu": 1.0,
+        "avg_runs": 5696.21,
+        "med_runs": 30.0,
+        "avg_builds": 18.1,
+        "avg_bookmarks": 2.38
+      }
+    ]
+  }
+}

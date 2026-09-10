@@ -1,0 +1,103 @@
+{
+  "concentration": {
+    "eligible": {
+      "n": 50917,
+      "gini": 0.935,
+      "top_1pct": 76.8,
+      "top_5pct": 88.7,
+      "top_10pct": 92.5,
+      "theil_total": 4.134,
+      "theil_between_pct": 13.1
+    },
+    "non_eligible": {
+      "n": 2585,
+      "gini": 0.946,
+      "top_1pct": 74.3,
+      "top_5pct": 88.5,
+      "top_10pct": 92.4,
+      "theil_total": 3.354,
+      "theil_between_pct": 13.3
+    }
+  },
+  "within_category_gini": {
+    "higher_in": 7,
+    "total": 15,
+    "details": [
+      {
+        "category": "AGENTS",
+        "eligible_gini": 0.811,
+        "non_eligible_gini": 0.683
+      },
+      {
+        "category": "AI",
+        "eligible_gini": 0.804,
+        "non_eligible_gini": 0.979
+      },
+      {
+        "category": "AUTOMATION",
+        "eligible_gini": 0.909,
+        "non_eligible_gini": 0.886
+      },
+      {
+        "category": "DEVELOPER_TOOLS",
+        "eligible_gini": 0.76,
+        "non_eligible_gini": 0.852
+      },
+      {
+        "category": "ECOMMERCE",
+        "eligible_gini": 0.811,
+        "non_eligible_gini": 0.878
+      },
+      {
+        "category": "JOBS",
+        "eligible_gini": 0.916,
+        "non_eligible_gini": 0.816
+      },
+      {
+        "category": "LEAD_GENERATION",
+        "eligible_gini": 0.95,
+        "non_eligible_gini": 0.957
+      },
+      {
+        "category": "MCP_SERVERS",
+        "eligible_gini": 0.888,
+        "non_eligible_gini": 0.863
+      },
+      {
+        "category": "NEWS",
+        "eligible_gini": 0.778,
+        "non_eligible_gini": 0.823
+      },
+      {
+        "category": "OTHER",
+        "eligible_gini": 0.652,
+        "non_eligible_gini": 0.702
+      },
+      {
+        "category": "REAL_ESTATE",
+        "eligible_gini": 0.767,
+        "non_eligible_gini": 0.866
+      },
+      {
+        "category": "SEO_TOOLS",
+        "eligible_gini": 0.943,
+        "non_eligible_gini": 0.825
+      },
+      {
+        "category": "SOCIAL_MEDIA",
+        "eligible_gini": 0.958,
+        "non_eligible_gini": 0.833
+      },
+      {
+        "category": "TRAVEL",
+        "eligible_gini": 0.91,
+        "non_eligible_gini": 0.953
+      },
+      {
+        "category": "VIDEOS",
+        "eligible_gini": 0.952,
+        "non_eligible_gini": 0.838
+      }
+    ]
+  }
+}

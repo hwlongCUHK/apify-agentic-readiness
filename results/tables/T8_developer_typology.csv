@@ -1,0 +1,12 @@
+dev_type,tier,n_devs,total_actors,avg_pct_agentic,avg_mu_per_actor,avg_builds_per_actor
+Mixed,Boutique (2-9),536,2386.0,53.7,30.9,24.0
+Mixed,Mid (10-99),354,11039.0,61.1,20.1,23.4
+Mixed,Whale (100+),77,24017.0,61.5,25.7,19.4
+Pure Agentic,Solo (1),971,971.0,100.0,8.0,18.5
+Pure Agentic,Boutique (2-9),809,3109.0,100.0,17.9,18.5
+Pure Agentic,Mid (10-99),253,5935.0,100.0,22.1,26.1
+Pure Agentic,Whale (100+),25,6014.0,100.0,2.3,9.3
+Pure Traditional,Solo (1),1611,1611.0,0.0,1.8,18.8
+Pure Traditional,Boutique (2-9),636,2127.0,0.0,5.8,15.6
+Pure Traditional,Mid (10-99),128,3409.0,0.0,1.4,8.6
+Pure Traditional,Whale (100+),11,2027.0,0.0,1.9,10.0

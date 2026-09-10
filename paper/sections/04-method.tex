@@ -1,0 +1,316 @@
+% !TEX root = ../main.tex
+\section{Data and Method}
+\label{sec:method}
+
+This section describes data collection, variable operationalization, and the
+analytic strategies used to address each research question.
+
+%% ----------------------------------------------------------------
+\subsection{Data Collection}
+\label{sec:data}
+
+Our data come from the Apify Store's public REST API, which exposes actor-level
+metadata, usage statistics, pricing structures, and developer information. The
+API returns paginated JSON responses that include storefront fields plus
+structured metadata such as event-level pricing and category identifiers. We
+additionally query the actor-detail endpoint \texttt{GET /v2/acts/\{actorId\}}
+to retrieve each tool's \texttt{actorPermissionLevel} and
+\texttt{actorStandby}---the two architectural fields that operationalize
+agentic readiness (\autoref{sec:variables}).
+
+\paragraph{Enumeration and coverage.}
+The global search endpoint truncates results at roughly 15{,}000 actors, so we
+enumerate via the public sitemap: we extract 5{,}400+ developer usernames, then
+issue per-developer paginated queries. We set \texttt{includeUnrunnableActors=true}
+on every query so actors excluded by the API's default runnability filter are
+retained. This two-stage strategy covers the full marketplace: every actor
+belongs to exactly one developer, and every developer with a public actor
+appears in the sitemap.
+
+\paragraph{Snapshots and validation.}
+We collected 17 daily snapshots (2026-08-19 to 2026-09-04); all
+cross-sectional analyses use the latest (2026-09-04). The actor-detail endpoint
+was queried on 2026-08-27, so the two architectural fields that define agentic
+readiness (permission level and standby) are measured once. The remaining
+snapshots serve for validation: zero duplicate rows, high actor retention, and
+stability of the store's agentic-payments whitelist flag (recorded daily from
+the store listing; only 1.4\% of actors change state across the 17 days).
+Because the whitelist flag is a platform-side summary of agentic eligibility
+that incorporates the architectural criteria among its inputs, its stability is
+suggestive---but not conclusive---of architectural stability, which we cannot
+observe daily. The single-snapshot census is 67{,}609 actors from
+5{,}789 developers; among the 57{,}032 pay-per-event (PPE) actors, the detail
+endpoint returned permission and standby fields for 53{,}502, of which 50{,}917
+(95\%) are agentic-ready.
+
+\paragraph{Ethics.} All data are public and require no authentication; the
+dataset contains no personal data beyond public developer usernames.
+
+\paragraph{Analytic samples.} Three nested samples structure the analyses: the
+\emph{full marketplace} ($N = 67{,}609$), the \emph{PPE sample}
+($N = 57{,}032$; 53{,}502 with architecture fields), and the
+\emph{mixed-developer PPE sample} ($N = 343$ developers, 16{,}537 actors) that
+publish both agentic-ready and non-agentic-ready tools and support the
+within-developer fixed-effects design.
+
+%% ----------------------------------------------------------------
+\subsection{Variables and Operationalization}
+\label{sec:variables}
+
+\paragraph{Outcome.}
+Our primary outcome is $\log(1 + \texttt{monthly\_users})$, the breadth of an
+actor's user base over the trailing 30 days. We use the log-plus-one transform
+because adoption counts are heavily right-skewed (median 1, top actors in the
+tens of thousands); percentages reported as $\exp(\hat\beta) - 1$ refer to the
+$1 + \texttt{monthly\_users}$ scale, not monthly users itself. As a secondary
+outcome we use $\log(1 + \texttt{runs\_30d})$.
+
+\paragraph{Treatment variable.}
+The treatment is \emph{agentic readiness}, a binary indicator equal to one when
+a PPE tool is configured with \emph{limited permissions} and \emph{no standby
+mode}. We operationalize it from two actor-detail fields:
+\texttt{actorPermissionLevel} ($\texttt{LIMITED\_PERMISSIONS}$ vs.\
+$\texttt{FULL\_PERMISSIONS}$) and \texttt{actorStandby}/\texttt{standbyUrl}
+(standby enabled vs.\ not). A tool is agentic-ready when it is
+limited-permissions and non-standby. These two fields are the
+\emph{architectural} component of Apify's agentic-payment eligibility
+(\autoref{sec:context}): they are necessary conditions that the developer sets
+in the tool's architecture, distinct from the developer-level KYC and
+approval-level curation gates that the platform applies on top of them. Agentic
+readiness thus describes \emph{architectural} admission to the agent-accessible
+set---the tools the platform's architecture renders suitable for AI agents to
+discover, invoke, and pay for---not the platform's full approval decision and
+not realized agent use; we do not observe whether any given agent invokes a
+tool.
+
+\paragraph{Control variables.}
+The within-developer specifications control for tool age
+($\log(1 + \texttt{age\_days})$), description length, and primary-category fixed
+effects, in addition to the developer fixed effects. As a robustness check we
+also add further listing-time covariates---log per-event price, log build count,
+and the number of pricing events. We do not control for ratings or review
+counts, which are post-treatment adoption outcomes rather than confounds. The
+per-category regressions instead control for $\log(1 + \texttt{total\_builds})$
+(developer effort), developer portfolio size, and the number of pricing events,
+because within-developer treatment variation is too sparse in most individual
+categories to estimate developer fixed effects reliably.
+
+\paragraph{Category membership.}
+Actors are multi-labeled: 84.4\% of PPE actors carry two or three categories.
+We define an actor's \emph{primary category} as the first entry in its
+platform-returned category list and use primary-category indicators for fixed
+effects and per-category regressions; as a robustness check we re-estimate the
+per-category results under a multi-hot (any-membership) assignment
+(\autoref{sec:results:rq3}).
+
+%% ----------------------------------------------------------------
+\subsection{Conceptual Framework}
+\label{sec:framework}
+
+Agentic readiness can be associated with adoption through two pathways
+(\autoref{fig:mechanism}). The first is \emph{agent-mediated}: readiness
+determines which tools enter the feasible interaction set for machine agents,
+potentially changing routing and discoverability, which changes the probability
+of first adoption and, through popularity feedback, downstream concentration.
+The second is \emph{developer-mediated}: the architectural choices that make a
+tool agentic-ready---limited permissions, no standby---may be correlated with a
+tool's task type, maturity, or target audience. A developer may configure its
+mass-market tools with limited permissions while reserving full permission for
+complex, enterprise workflows, so readiness is associated with adoption even
+without any agent-side routing effect. Such tool-level selection cannot be
+ruled out without observing agent traffic.
+
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[
+      box/.style={draw, rounded corners=2pt, align=center, font=\scriptsize, inner sep=4pt, minimum width=2.3cm},
+      obs/.style={-{Stealth[length=2mm]}, thick},
+      inf/.style={-{Stealth[length=2mm]}, thick, dashed},
+    ]
+    \node[box] (flag) at (0,0) {Agentic readiness\\(limited permissions, no standby)};
+    \node[box] (feasible) at (-2.8,-1.3) {Feasible interaction set\\for machine agents};
+    \node[box] (dev) at (2.8,-1.3) {Safer, more restricted\\tool architecture};
+    \node[box] (routing) at (-2.8,-2.5) {Routing /\\discoverability};
+    \node[box] (choice) at (2.8,-2.5) {Easier to adopt};
+    \node[box] (adopt) at (0,-3.7) {First adoption\\(extensive margin)};
+    \node[box] (conc) at (0,-5.0) {Downstream\\concentration};
+    \draw[obs] (flag) -- (feasible);
+    \draw[obs] (flag) -- (dev);
+    \draw[inf] (feasible) -- (routing);
+    \draw[obs] (dev) -- (choice);
+    \draw[inf] (routing) -- (adopt);
+    \draw[obs] (choice) -- (adopt);
+    \draw[obs] (adopt) -- (conc);
+  \end{tikzpicture}
+  \caption{Conceptual framework: two pathways from agentic readiness to
+    adoption. Solid arrows mark associations we observe; dashed arrows mark
+    steps we infer but do not observe. The agent-mediated and developer-mediated
+    pathways converge on first adoption and cannot be separated with
+    cross-sectional data.}
+  \label{fig:mechanism}
+\end{figure}
+
+We observe the endpoints of both pathways---agentic readiness and the adoption
+outcomes---but not the interior: our data contain no agent-side activity, so the
+routing and developer-expectation steps are inferred rather than observed. Our
+estimates therefore describe the adoption associated with admission to the
+agent-accessible set; attributing this association to agent routing
+specifically requires agent-side data. The research questions map onto the
+model: RQ1 estimates the total association, RQ2 locates the margin, and RQ3
+characterizes concentration.
+
+%% ----------------------------------------------------------------
+\subsection{RQ1: Quantifying the Adoption Association of Agentic Readiness}
+\label{sec:methods}
+
+We estimate the association between agentic readiness and adoption with a
+primary within-developer design and a set of robustness checks.
+
+\subsubsection{Within-Developer Fixed Effects}
+
+The primary specification exploits the 343 developers who publish \emph{both}
+agentic-ready and non-agentic-ready pay-per-event tools (16{,}537 actors). For
+these mixed developers we estimate
+\begin{equation}
+\label{eq:fe}
+\log(1 + \text{MU}_{ij}) = \beta \cdot \text{Ready}_{ij}
+  + \mathbf{X}_{ij} \boldsymbol{\gamma} + \alpha_j + \epsilon_{ij}
+\end{equation}
+where $\alpha_j$ is a developer fixed effect. The fixed effect absorbs every
+time-invariant developer characteristic---reputation, marketing reach, audience
+size, category specialization, pricing strategy---so $\beta$ identifies the
+\emph{within-developer} contrast between a developer's agentic-ready and
+non-agentic-ready tools. This is the strongest comparison our data support: it
+holds the developer constant and asks whether readiness predicts adoption
+across the tools a single developer publishes. The control vector
+$\mathbf{X}_{ij}$ contains tool age, description length, and primary-category
+fixed effects; standard errors are clustered at the developer level
+\cite{wooldridge2010econometric}.
+
+The design does not address \emph{within-developer selection}: a developer may
+configure its most promising tools to be agentic-ready and invest more in them
+\cite{boudreau2012complementors}. We treat this as a substantive alternative
+explanation rather than a technical nuisance, and return to it in
+\autoref{sec:discussion}.
+
+\paragraph{Two estimands.} Developer size correlates with the readiness gap,
+so we report two co-equal estimands. The \emph{equal-developer-weighted}
+estimand down-weights observations by developer portfolio size: each tool of
+developer $j$ receives weight $1/n_j$ (where $n_j$ is the developer's tool
+count), so a developer's influence on the estimate does not grow with the number
+of tools it publishes. This approximates asking whether the \emph{typical
+developer's} agentic-ready tools outperform its non-agentic-ready tools; it
+removes the size weighting but not the within-developer variance in readiness
+share, so it is not an exact simple average of developer-level contrasts. The
+\emph{actor-weighted} estimand weights each tool equally, asking whether the
+\emph{typical tool} in the agentic-ready set outperforms the typical tool
+outside it. The two answer different questions---one about developers, one about
+tools---and we report both throughout (\autoref{sec:results:rq1}).
+
+\paragraph{Who are the mixed developers?} The within-developer design rests on
+the 343 mixed developers, a specific subsample rather than a random draw of the
+marketplace (\autoref{tab:mixed_developers}). Relative to non-mixed developers,
+they run larger portfolios (median 11 versus 2 tools), publish older tools
+(median 105 versus 77 days), and attract far more users on average (mean 73.5
+versus 11.9 monthly users). They are exclusively boutique-to-whale
+developers---no single-tool developer can be mixed by construction. The
+within-developer estimates therefore speak to the marketplace's prolific,
+established developers rather than to its long tail, a boundary we carry into
+the interpretation.
+
+\input{tables/T26}
+
+\subsubsection{Robustness}
+
+Four checks bound the interpretation. First, we exclude \emph{whale developers}
+($\geq 100$ pay-per-event tools) and re-estimate the within-developer model, to
+rule out that a handful of large developers drive the result. Second, we use
+propensity score matching (PSM) \cite{rosenbaum1983propensity, stuart2010matching},
+estimating the propensity score from \emph{listing-time} covariates only (tool
+age, description length, developer portfolio size, category) so post-treatment
+signals cannot enter the model. Because the treated-to-control ratio is 19.7:1,
+1:1 matching covers only a small fraction of agentic-ready tools; we therefore
+report full-sample weighting estimators---overlap weighting (overlap
+population, ATO) and inverse-probability-of-treatment weighting (treated
+population, ATT)---alongside 1:1 matching. Because the comparison group is
+small and potentially selected, we report covariate-balance diagnostics
+(standardized mean differences before and after weighting) and the
+propensity-score overlap across the two groups. Third, because
+$\log(1+\texttt{monthly\_users})$ compresses the multiplicative gap near zero
+(the median tool has one monthly user), we also fit a Poisson
+pseudo-maximum-likelihood model with developer fixed effects
+\cite{santossilva2006loggravity}, which estimates the gap on the monthly-user
+count scale directly. Fourth, to address the
+alternative explanation that agentic-ready and non-agentic-ready tools are
+simply different tool types, we match each ready tool to its most similar
+non-ready tool \emph{within the same developer} (1:1 nearest-neighbor, with
+replacement, no caliper) under two similarity notions: description cosine
+similarity from TF-IDF vectors (1--2 word n-grams, top 5{,}000 terms), and a
+covariate distance (standardized Euclidean distance on log price, log age, and
+description length, plus a bonus for an exact category match). For each matched
+set we report the mean log-adoption gap with a developer-clustered bootstrap
+95\% confidence interval---we resample developers (with replacement) and
+recompute the mean gap over the pairs of the sampled developers, since matched
+pairs are nested within developers and treating them as independent would
+understate uncertainty---and the standardized covariate differences before and
+after matching. Because nearest-neighbor matching is a nonsmooth estimator for
+which the standard bootstrap is not generally valid
+\cite{abadie2006largesample,abadie2008bias}, we treat these intervals as
+descriptive rather than as exact inference for the average treatment effect on
+the treated.
+
+%% ----------------------------------------------------------------
+\subsection{RQ2: Locating the Margin}
+\label{sec:methods-rq2}
+
+RQ2 asks \emph{where} the adoption association operates. We decompose it into
+an \emph{extensive} margin---whether a tool has any monthly users at all---and
+an \emph{intensive} margin---how many users it has conditional on having any.
+The distinction maps onto the two pathways in \autoref{fig:mechanism}: an
+extensive-margin association is consistent with readiness changing whether a
+tool is ever discovered and first adopted, while an intensive-margin
+association is consistent with readiness changing how far a tool scales once
+adopted. Because the two pathways make different predictions about
+\emph{where} the association appears, locating the margin is descriptive.
+
+We estimate three outcomes within the mixed-developer, equal-developer-weighted
+design: a linear-probability model for having any monthly users (extensive
+margin), an OLS model on $\log(1 + \texttt{monthly\_users})$ conditional on
+traction (intensive margin), and a linear-probability model for entering the
+top decile of monthly users, which captures the extreme upper tail of adoption.
+Each uses developer fixed effects, developer-clustered standard errors, and the
+same controls as \autoref{eq:fe}.
+
+%% ----------------------------------------------------------------
+\subsection{RQ3: Heterogeneity and Concentration}
+\label{sec:methods-rq3}
+
+RQ3 asks two questions: whether the adoption association is uniform across
+marketplace categories, and whether agentic readiness is associated with how
+concentrated adoption is.
+
+\subsubsection{Category Heterogeneity}
+
+We re-estimate the adoption association separately within each category that
+has at least 200 tools and at least 30 in each readiness group (15 categories),
+using developer-clustered standard errors and controls for developer effort
+($\log(1 + \texttt{total\_builds})$), developer portfolio size, and the number
+of pricing events. Because actors are multi-labeled, we report both a
+\emph{primary-category} assignment (the first category in the platform-returned
+list) and a \emph{multi-hot} (any-membership) assignment, the latter to guard
+against tag-ordering artifacts; we apply a Bonferroni correction within each
+assignment. Because these per-category regressions use tool-level controls
+rather than developer fixed effects, we also estimate a Ready $\times$ Category
+interaction in the within-developer model and report within-developer,
+within-category estimates where the design supports them, so the category
+gradient is not inferred from between-developer variation alone.
+
+\subsubsection{Concentration}
+
+We measure concentration within the agentic-ready and non-agentic-ready sets
+separately using three complementary statistics: the Gini coefficient (overall
+inequality), top-1\%, top-5\%, and top-10\% user shares (the tail), and a Theil
+decomposition into within- and between-category components. We also compare
+within-category Gini coefficients across the two sets. The question is whether
+admitting agents to a tool set is associated with a more winner-take-all
+distribution of users.

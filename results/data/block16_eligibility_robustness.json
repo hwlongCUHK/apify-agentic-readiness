@@ -1,0 +1,142 @@
+{
+  "whale_sensitivity": {
+    "coef": 0.5575,
+    "se": 0.0893,
+    "p": 4.1973132673526095e-10,
+    "pct": 74.6,
+    "n_developers": 302,
+    "n_actors": 4377
+  },
+  "multihot_category": {
+    "n_categories": 18,
+    "bonferroni_alpha": 0.00278,
+    "rows": [
+      {
+        "category": "AGENTS",
+        "n_actors": 3205,
+        "coef": 0.5464,
+        "se": 0.1123,
+        "p": 1.1391370763516759e-06
+      },
+      {
+        "category": "SOCIAL_MEDIA",
+        "n_actors": 8766,
+        "coef": 0.5405,
+        "se": 0.0978,
+        "p": 3.2712899176236905e-08
+      },
+      {
+        "category": "VIDEOS",
+        "n_actors": 2314,
+        "coef": 0.5061,
+        "se": 0.1279,
+        "p": 7.549408080134942e-05
+      },
+      {
+        "category": "BUSINESS",
+        "n_actors": 5054,
+        "coef": 0.4945,
+        "se": 0.1411,
+        "p": 0.0004585877841190369
+      },
+      {
+        "category": "AI",
+        "n_actors": 7234,
+        "coef": 0.431,
+        "se": 0.0862,
+        "p": 5.772582492519452e-07
+      },
+      {
+        "category": "REAL_ESTATE",
+        "n_actors": 4050,
+        "coef": 0.4258,
+        "se": 0.0923,
+        "p": 3.994404169816574e-06
+      },
+      {
+        "category": "TRAVEL",
+        "n_actors": 2011,
+        "coef": 0.4101,
+        "se": 0.1824,
+        "p": 0.024521352287878318
+      },
+      {
+        "category": "ECOMMERCE",
+        "n_actors": 11024,
+        "coef": 0.4088,
+        "se": 0.0785,
+        "p": 1.9244060380379635e-07
+      },
+      {
+        "category": "NEWS",
+        "n_actors": 2914,
+        "coef": 0.3865,
+        "se": 0.0923,
+        "p": 2.827227131138222e-05
+      },
+      {
+        "category": "AUTOMATION",
+        "n_actors": 25344,
+        "coef": 0.3266,
+        "se": 0.0561,
+        "p": 5.982339819127551e-09
+      },
+      {
+        "category": "OTHER",
+        "n_actors": 6753,
+        "coef": 0.3229,
+        "se": 0.0822,
+        "p": 8.615126570630976e-05
+      },
+      {
+        "category": "JOBS",
+        "n_actors": 4853,
+        "coef": 0.3223,
+        "se": 0.1346,
+        "p": 0.016612070998739792
+      },
+      {
+        "category": "SEO_TOOLS",
+        "n_actors": 3471,
+        "coef": 0.3216,
+        "se": 0.0904,
+        "p": 0.0003753005243233733
+      },
+      {
+        "category": "OPEN_SOURCE",
+        "n_actors": 272,
+        "coef": 0.2715,
+        "se": 0.122,
+        "p": 0.025995213030567753
+      },
+      {
+        "category": "LEAD_GENERATION",
+        "n_actors": 19026,
+        "coef": 0.2552,
+        "se": 0.0908,
+        "p": 0.004961464617949867
+      },
+      {
+        "category": "DEVELOPER_TOOLS",
+        "n_actors": 18771,
+        "coef": 0.2282,
+        "se": 0.0596,
+        "p": 0.00012877180403628904
+      },
+      {
+        "category": "INTEGRATIONS",
+        "n_actors": 2574,
+        "coef": 0.209,
+        "se": 0.1149,
+        "p": 0.06896408556995151
+      },
+      {
+        "category": "MCP_SERVERS",
+        "n_actors": 1890,
+        "coef": 0.1721,
+        "se": 0.1066,
+        "p": 0.10640599716136391
+      }
+    ]
+  }
+}

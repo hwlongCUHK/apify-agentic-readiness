@@ -1,0 +1,32 @@
+\begin{table}[t]
+  \centering
+  \caption{Per-category agentic-readiness effect (OLS, tool-level controls).}
+  \label{tab:eligibility_category}
+  \small
+  \begin{tabular}{lrcrc}
+    \toprule
+    Category & Coef. & (SE) & Sig. & $N$ \\
+    \midrule
+    News             & $+0.6449$ & (0.095) & ***  & 1,231 \\
+    Social Media     & $+0.5503$ & (0.116) & ***  & 5,368 \\
+    Travel           & $+0.5383$ & (0.150) & ***  & 1,309 \\
+    Videos           & $+0.4696$ & (0.165) & **   & 914 \\
+    Automation       & $+0.3810$ & (0.058) & ***  & 5,513 \\
+    E-commerce       & $+0.3125$ & (0.095) & ***  & 7,364 \\
+    Real Estate      & $+0.3047$ & (0.141) & *    & 2,867 \\
+    Other            & $+0.2894$ & (0.096) & ***  & 1,209 \\
+    AI               & $+0.2882$ & (0.093) & ***  & 3,900 \\
+    SEO              & $+0.2361$ & (0.172) & n.s. & 1,548 \\
+    Agents           & $+0.2317$ & (0.122) & n.s. & 610 \\
+    Jobs             & $+0.2213$ & (0.189) & n.s. & 3,944 \\
+    Lead Generation  & $+0.1498$ & (0.141) & n.s. & 8,239 \\
+    Developer Tools  & $+0.1192$ & (0.083) & n.s. & 5,747 \\
+    MCP Servers      & $-0.1322$ & (0.075) & n.s. & 372 \\
+    \bottomrule
+    \multicolumn{5}{l}{\footnotesize $^{***}\,p<0.003$ (Bonferroni); $^{**}\,p<0.01$; $^{*}\,p<0.05$; n.s.\,$p\geq 0.05$.} \\
+    \multicolumn{5}{l}{\footnotesize Developer-clustered SEs. Controls: log-builds, portfolio size, pricing events.} \\
+    \multicolumn{5}{l}{\footnotesize Multi-hot (any-membership) robustness: 12 of 18 categories Bonferroni-significant, all positive.} \\
+    \multicolumn{5}{l}{\footnotesize Within-developer (FE) estimates reorder: Agents $-0.10$ and AI $+0.15$ (n.s.);} \\
+    \multicolumn{5}{l}{\footnotesize Developer Tools $+0.81$, Social Media $+0.84$, Automation $+0.71$.}
+  \end{tabular}
+\end{table}

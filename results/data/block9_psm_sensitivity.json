@@ -1,0 +1,97 @@
+{
+  "n_treated": 39490,
+  "n_control": 12371,
+  "common_support": {
+    "lo": 0.32955588875115843,
+    "hi": 0.9737504314313079,
+    "n_treated_in_support": 39477,
+    "pct_treated_in_support": 100.0
+  },
+  "matching_1to1": {
+    "n_pairs": 11881,
+    "pct_treated_matched": 30.1,
+    "att": 0.1526
+  },
+  "overlap_weighted_att": 0.1475,
+  "iptw_att": 0.1361,
+  "matching_with_replacement": {
+    "att": 0.1391
+  },
+  "bootstrap": {
+    "B": 500,
+    "estimators": {
+      "1to1": {
+        "se": 0.0554,
+        "p": 0.016
+      },
+      "overlap": {
+        "se": 0.0501,
+        "p": 0.002
+      },
+      "iptw": {
+        "se": 0.0487,
+        "p": 0.01
+      },
+      "replacement": {
+        "se": 0.0484,
+        "p": 0.008
+      }
+    }
+  },
+  "matched_vs_unmatched_treated": [
+    {
+      "variable": "log_builds",
+      "matched_treated_mean": 2.145,
+      "unmatched_treated_mean": 2.051,
+      "diff": 0.095
+    },
+    {
+      "variable": "dev_portfolio_size",
+      "matched_treated_mean": 378.225,
+      "unmatched_treated_mean": 306.296,
+      "diff": 71.929
+    },
+    {
+      "variable": "desc_length",
+      "matched_treated_mean": 202.559,
+      "unmatched_treated_mean": 202.484,
+      "diff": 0.075
+    },
+    {
+      "variable": "n_pricing_events",
+      "matched_treated_mean": 2.088,
+      "unmatched_treated_mean": 2.038,
+      "diff": 0.05
+    },
+    {
+      "variable": "log_bookmarks",
+      "matched_treated_mean": 0.228,
+      "unmatched_treated_mean": 0.185,
+      "diff": 0.042
+    },
+    {
+      "variable": "log_reviews",
+      "matched_treated_mean": 0.128,
+      "unmatched_treated_mean": 0.102,
+      "diff": 0.026
+    },
+    {
+      "variable": "rating",
+      "matched_treated_mean": 0.494,
+      "unmatched_treated_mean": 0.4,
+      "diff": 0.094
+    },
+    {
+      "variable": "log_age",
+      "matched_treated_mean": 4.03,
+      "unmatched_treated_mean": 3.72,
+      "diff": 0.31
+    },
+    {
+      "variable": "monthly_users",
+      "matched_treated_mean": 20.128,
+      "unmatched_treated_mean": 14.713,
+      "diff": 5.415
+    }
+  ]
+}

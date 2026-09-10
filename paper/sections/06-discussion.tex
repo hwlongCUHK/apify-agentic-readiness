@@ -1,0 +1,158 @@
+% !TEX root = ../main.tex
+\section{Discussion}
+\label{sec:discussion}
+
+We document three findings: agentic-ready tools attract far more adoption
+(up to 72\% within the same developer), this association appears on both the
+extensive and conditional intensive margins, and we find no robust evidence
+that adoption is more concentrated among agentic-ready tools. Together they
+describe the adoption and concentration patterns associated with the platform's
+readiness boundary for machine consumers.
+
+%% ─────────────────────────────────────────────
+\subsection{The Adoption Payoff of Agentic Readiness}
+\label{sec:discussion:gap}
+
+Within the same developer, agentic-ready tools attract a large and consistently
+positive adoption gap---40\% to 72\% on the log-plus-one scale depending on
+weighting (72\% under our preferred equal-developer-weighted estimator), and
+several-fold larger on the count scale. This is the paper's central finding:
+within a developer, the tools configured for agent-initiated use attract
+substantially more adoption
+than those that are not. The identification strategy isolates readiness, not realized agent activity.
+
+Two pathways can produce this association, and our cross-sectional data cannot
+separate them (\autoref{fig:mechanism}). Under an \emph{agent-mediated}
+account, agentic-ready tools enter the feasible set agents can discover and
+invoke, and this routing raises their adoption. Under a
+\emph{developer-mediated} account, the architectural choices that make a tool
+agentic-ready may coincide with developer investment or appeal to human
+adopters independent of agents, so readiness is associated with adoption even
+without any agent-side effect. Both accounts are consistent with the
+extensive-margin finding.
+
+Agentic readiness is the \emph{architectural} component of the platform's
+agent-access admission, not a proxy we chose. The platform defines limited
+permissions and non-standby as necessary architectural conditions for
+agentic-payment eligibility; the \texttt{allowsAgenticUsers} filter and the MCP
+\texttt{search-actors} tool surface agent-eligible tools to agent discovery, and
+agent invocation of ineligible tools is rejected (\autoref{sec:context}). The
+treatment therefore measures architectural admission to the agent-accessible
+set---a necessary condition for agent use, distinct from the developer-level KYC
+and approval-level curation gates the platform applies on top. What remains open
+is the \emph{mechanism}: whether the adoption gap reflects agent routing,
+correlated tool-level selection---task type, maturity, target audience---or both.
+
+The estimate nonetheless survives excluding whale developers and
+propensity-score weighting, so the association is not a small-developer
+artifact. The remaining interpretive boundaries---unobserved agent use,
+within-developer selection, the identifying subsample, and the temporal
+mismatch---are detailed in \autoref{sec:discussion:limitations}.
+
+%% ─────────────────────────────────────────────
+\subsection{Within-Group Adoption Inequality}
+\label{sec:discussion:concentration}
+
+The paper's second finding is an asymmetry: agentic readiness is associated
+with \emph{which tools get adopted}, but not with a \emph{detectable increase
+in concentration}. We find no robust evidence that adoption is more
+concentrated among agentic-ready tools: Gini coefficients are nearly identical
+(0.935 versus 0.946), within categories agentic-ready tools are more
+concentrated in only 7 of 15, and a sample-size-equalized comparison shows the
+upper-tail gap (top-1\% 76.8\% versus 74.3\%) is too imprecisely estimated to
+be informative. These estimates compare concentration within observed readiness sets; market-level counterfactual effects require a different design.
+
+For platform operators, this asymmetry distinguishes access design (who may be
+used) from concentration design (how value is distributed), two levers that are
+easy to conflate.
+
+%% ─────────────────────────────────────────────
+\subsection{Design Implications: Governing Machine Visibility}
+\label{sec:discussion:principles}
+
+Our empirical contribution is a large, robust adoption premium attached to
+agent-access admission. The conceptual step from it is a design object: the
+admission boundary, in which permission architecture doubles as discovery
+architecture. That coupling is partly definitional---the platform's
+\texttt{allowsAgenticUsers} filter and MCP \texttt{search-actors} surface
+limited-permissions, non-standby tools to machine visibility---so the
+HCI questions worth asking concern what the coupling does and how to design for it. Three follow.
+
+\emph{The boundary redistributes opportunity, not just access.} Within the same
+developer, tools admitted to the agent-accessible set attract substantially more
+adoption (40\% to 72\%), and two-thirds of mixed developers have a positive
+ready--non-ready gap. An access rule is therefore a distributional lever: it
+changes \emph{which tools get adopted}, not merely which tools are technically
+admissible. Operators who treat access design as a screening question miss the
+governance question of who gains and loses visibility.
+
+\emph{Developers must design for two legibility surfaces.} A tool now has two
+distinct interfaces: a visual storefront for humans and a machine-readable
+surface---schema, documentation, deterministic execution---for agents. These
+require different affordances, and, as API-usability research shows, each
+interface must be designed explicitly for its users \cite{myers2016api}; a
+developer optimizing for one audience can render the tool illegible to the
+other. Dual-audience
+legibility is thus not the same task done twice, but two coupled design problems
+with different audiences and different success criteria---the central HCI
+challenge the boundary creates.
+
+\emph{Platforms must provide dual-audience observability.} Because
+\texttt{monthly\_users} collapses human and agent traffic into one number, a
+developer---or a platform---cannot tell whether a tool's adoption is
+human-driven, agent-driven, or both. As machine-consumer demand grows, the
+platform must expose audience-specific traffic and conversion signals, or
+developers cannot make informed decisions about how to design for two audiences
+whose distinct needs must be balanced---a multisided-fairness concern
+\cite{burke2017multisided}.
+
+%% ─────────────────────────────────────────────
+\subsection{Limitations and Boundary Conditions}
+\label{sec:discussion:limitations}
+
+Several limitations bound the interpretation of our findings.
+
+\emph{Single platform.} All data come from the Apify Store. Whether the
+agentic-readiness adoption gap generalizes to other automation marketplaces
+(Zapier, UiPath Marketplace, Bardeen) remains an open question.
+
+\emph{Cross-sectional design and temporal mismatch.} Our core analysis uses a
+single snapshot, and the treatment is measured at snapshot time while
+\texttt{monthly\_users} is a trailing 30-day measure. The architectural fields
+that define readiness are measured once (2026-08-27), so we cannot directly
+verify that a tool held its architecture state across the full adoption window;
+the store's daily whitelist flag is stable (1.4\% of actors change state), which
+is suggestive but does not fully resolve the concern.
+
+\emph{No observed agent use.} Agentic readiness describes admission to the
+agent-accessible set, not realized agent use; \texttt{monthly\_users} does not
+distinguish human from agent traffic, so the agent-mediated and
+developer-mediated pathways cannot be separated (\autoref{sec:discussion:gap}).
+
+\emph{Identifying subsample.} The within-developer design is identified by the
+343 mixed developers---larger, older, more successful developers---so the
+estimate speaks to the marketplace's established developers rather than its long
+tail (\autoref{tab:mixed_developers}).
+
+\emph{Control-group imbalance.} Only 5\% of PPE tools are non-agentic-ready, so
+the comparison group is small and potentially selected; this most affects the
+concentration comparison, which we address with sample-size equalization
+(\autoref{sec:discussion:concentration}).
+
+\emph{Residual within-developer selection.} Listing-time covariates barely
+attenuate the within-developer coefficient; unobserved tool-level investment
+remains the main alternative explanation.
+
+%% ─────────────────────────────────────────────
+\subsection{Future Work}
+\label{sec:discussion:future}
+
+Future work should study developers who selectively convert rental actors to
+pay-per-event (and thus to potential agentic readiness) around the October 2026
+sunset, study developers who selectively configure tools to be agentic-ready,
+compare automation marketplaces (Zapier, UiPath, Bardeen), and collect
+agent-side usage data to separate the agent-mediated and developer-mediated
+pathways. Empirically, whether a developer optimizing for one legibility surface
+renders the tool illegible to the other remains to be tested, as does how
+platforms should surface and evaluate both surfaces---building on API-usability
+evaluation methods \cite{myers2016api}.

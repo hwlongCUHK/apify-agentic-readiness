@@ -1,0 +1,42 @@
+{
+  "developer_scale_gradient": [
+    {
+      "tier": "Boutique (2-9)",
+      "n_devs": 355,
+      "mean_gap": 0.1786,
+      "median_gap": 0.0,
+      "pct_positive": 44.2
+    },
+    {
+      "tier": "Mid (10-99)",
+      "n_devs": 260,
+      "mean_gap": 0.1785,
+      "median_gap": 0.0654,
+      "pct_positive": 54.2
+    },
+    {
+      "tier": "Whale (100+)",
+      "n_devs": 67,
+      "mean_gap": -0.0221,
+      "median_gap": 0.0489,
+      "pct_positive": 55.2
+    }
+  ],
+  "interaction_test": [
+    {
+      "spec": "Pooled, no controls",
+      "coef": 0.1272,
+      "p": 0.0176
+    },
+    {
+      "spec": "Pooled, listing-time ctrls",
+      "coef": 0.0946,
+      "p": 0.1121
+    },
+    {
+      "spec": "Within-developer FE",
+      "coef": -0.1003,
+      "p": 0.078
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "mixed": {
+    "n_developers": 343,
+    "pct_of_ppe_developers": 8.2,
+    "median_full_portfolio": 11.0,
+    "median_ppe_portfolio": 8.0,
+    "median_tool_age_days": 104.5,
+    "median_monthly_users": 1.0,
+    "mean_monthly_users": 73.46,
+    "pct_eligible": 91.2,
+    "tier_pct": {
+      "Solo": 0.0,
+      "Boutique": 46.4,
+      "Mid": 41.7,
+      "Whale": 12.0
+    }
+  },
+  "non_mixed": {
+    "n_developers": 3826,
+    "pct_of_ppe_developers": 91.8,
+    "median_full_portfolio": 2.0,
+    "median_ppe_portfolio": 2.0,
+    "median_tool_age_days": 77.2,
+    "median_monthly_users": 1.0,
+    "mean_monthly_users": 11.92,
+    "pct_eligible": 97.0,
+    "tier_pct": {
+      "Solo": 42.0,
+      "Boutique": 41.0,
+      "Mid": 14.8,
+      "Whale": 2.1
+    }
+  },
+  "n_ppe_developers_total": 4169,
+  "n_mixed": 343
+}

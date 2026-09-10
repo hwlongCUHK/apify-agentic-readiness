@@ -1,0 +1,54 @@
+{
+  "description_match": {
+    "n_matched_pairs": 15078,
+    "n_non_ready_tools": 2585,
+    "mean_gap": 0.2552,
+    "median_gap": 0.0,
+    "pct_gap": 29.1,
+    "frac_positive": 0.466,
+    "bootstrap_ci95": [
+      0.0645,
+      0.4441
+    ],
+    "balance": {
+      "log_price": {
+        "smd_before": 0.057,
+        "smd_after": 0.069
+      },
+      "log_age": {
+        "smd_before": -0.899,
+        "smd_after": -0.304
+      },
+      "desc_length": {
+        "smd_before": 0.19,
+        "smd_after": -0.033
+      }
+    }
+  },
+  "covariate_match": {
+    "n_matched_pairs": 15078,
+    "n_non_ready_tools": 2585,
+    "mean_gap": 0.2834,
+    "median_gap": 0.0,
+    "pct_gap": 32.8,
+    "frac_positive": 0.47,
+    "bootstrap_ci95": [
+      0.0761,
+      0.4699
+    ],
+    "balance": {
+      "log_price": {
+        "smd_before": 0.057,
+        "smd_after": 0.069
+      },
+      "log_age": {
+        "smd_before": -0.899,
+        "smd_after": -0.171
+      },
+      "desc_length": {
+        "smd_before": 0.19,
+        "smd_after": -0.025
+      }
+    }
+  }
+}

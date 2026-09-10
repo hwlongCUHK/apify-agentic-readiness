@@ -1,0 +1,62 @@
+{
+  "T9": [
+    {
+      "complexity_tier": "1 event",
+      "n_actors": 11089,
+      "avg_median_price": 0.118905,
+      "avg_max_price": 0.1189,
+      "avg_mean_price": 0.118905
+    },
+    {
+      "complexity_tier": "2-3 events",
+      "n_actors": 38017,
+      "avg_median_price": 0.028454,
+      "avg_max_price": 0.0667,
+      "avg_mean_price": 0.033638
+    },
+    {
+      "complexity_tier": "4-5 events",
+      "n_actors": 2102,
+      "avg_median_price": 0.139016,
+      "avg_max_price": 0.5208,
+      "avg_mean_price": 0.201574
+    },
+    {
+      "complexity_tier": "6+ events",
+      "n_actors": 658,
+      "avg_median_price": 0.049625,
+      "avg_max_price": 0.3713,
+      "avg_mean_price": 0.105381
+    }
+  ],
+  "T10": [
+    {
+      "agentic": false,
+      "n_actors": 12371,
+      "avg_n_events": 2.09,
+      "avg_median_event_price": 0.043639,
+      "avg_mean_event_price": 0.050057,
+      "avg_max_price": 0.0875,
+      "avg_price_range": 0.0661
+    },
+    {
+      "agentic": true,
+      "n_actors": 39490,
+      "avg_n_events": 2.05,
+      "avg_median_event_price": 0.040712,
+      "avg_mean_event_price": 0.048675,
+      "avg_max_price": 0.0944,
+      "avg_price_range": 0.0788
+    }
+  ],
+  "rental_profile": {
+    "n_rental": 5692,
+    "avg_mu": 1.66,
+    "med_mu": 1.0,
+    "avg_runs": 2544.1,
+    "avg_builds": 35.0,
+    "avg_bookmarks": 3.87,
+    "avg_monthly_fee": 17.93,
+    "med_monthly_fee": 19.0
+  }
+}

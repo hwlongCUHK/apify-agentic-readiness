@@ -1,0 +1,74 @@
+{
+  "T4": [
+    {
+      "agentic": false,
+      "n": 23155,
+      "avg_mu": 5.33,
+      "med_mu": 1.0,
+      "avg_runs": 1522.86,
+      "med_runs": 29.0,
+      "avg_bookmarks": 1.98,
+      "med_bookmarks": 0.0,
+      "avg_rating": 0.686,
+      "avg_builds": 16.6,
+      "avg_reviews": 0.51
+    },
+    {
+      "agentic": true,
+      "n": 39490,
+      "avg_mu": 16.34,
+      "med_mu": 1.0,
+      "avg_runs": 4467.13,
+      "med_runs": 29.0,
+      "avg_bookmarks": 1.99,
+      "med_bookmarks": 0.0,
+      "avg_rating": 0.428,
+      "avg_builds": 17.7,
+      "avg_reviews": 0.45
+    }
+  ],
+  "T5": [
+    {
+      "agentic": false,
+      "n": 12371,
+      "avg_mu": 4.68,
+      "med_mu": 1.0,
+      "p75_mu": 2.0,
+      "p90_mu": 6.0,
+      "p95_mu": 13.0,
+      "avg_runs": 926.73,
+      "med_runs": 29.0,
+      "avg_builds": 10.6,
+      "avg_bookmarks": 1.07
+    },
+    {
+      "agentic": true,
+      "n": 39490,
+      "avg_mu": 16.34,
+      "med_mu": 1.0,
+      "p75_mu": 2.0,
+      "p90_mu": 7.0,
+      "p95_mu": 19.0,
+      "avg_runs": 4467.13,
+      "med_runs": 29.0,
+      "avg_builds": 17.7,
+      "avg_bookmarks": 1.99
+    }
+  ],
+  "statistics": {
+    "mann_whitney_monthly_users": {
+      "U": 263458435.5,
+      "p": 2.3291796915607392e-46,
+      "rank_biserial_r": -0.0786,
+      "n_agentic": 39490,
+      "n_nonagentic": 12371
+    },
+    "mann_whitney_runs_30d": {
+      "U": 257090570.5,
+      "p": 4.2934526998449287e-19,
+      "rank_biserial_r": -0.0525,
+      "n_agentic": 39490,
+      "n_nonagentic": 12371
+    }
+  }
+}

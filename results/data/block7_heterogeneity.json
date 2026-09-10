@@ -1,0 +1,443 @@
+{
+  "category_premiums": {
+    "per_category": [
+      {
+        "category": "AI",
+        "n_actors": 3875,
+        "n_agentic": 2893,
+        "n_nonagentic": 982,
+        "pct_agentic": 74.7,
+        "coef_agentic": 0.2091,
+        "se": 0.0277,
+        "p_value": 4.4753637147811815e-14,
+        "significant": "True",
+        "direction": "positive"
+      },
+      {
+        "category": "SOCIAL_MEDIA",
+        "n_actors": 5212,
+        "n_agentic": 3709,
+        "n_nonagentic": 1503,
+        "pct_agentic": 71.2,
+        "coef_agentic": 0.171,
+        "se": 0.0339,
+        "p_value": 4.709032080560169e-07,
+        "significant": "True",
+        "direction": "positive"
+      },
+      {
+        "category": "VIDEOS",
+        "n_actors": 868,
+        "n_agentic": 585,
+        "n_nonagentic": 283,
+        "pct_agentic": 67.4,
+        "coef_agentic": 0.1315,
+        "se": 0.068,
+        "p_value": 0.05314290282933789,
+        "significant": "False",
+        "direction": "positive"
+      },
+      {
+        "category": "TRAVEL",
+        "n_actors": 1256,
+        "n_agentic": 979,
+        "n_nonagentic": 277,
+        "pct_agentic": 77.9,
+        "coef_agentic": 0.1266,
+        "se": 0.053,
+        "p_value": 0.017031408695643055,
+        "significant": "True",
+        "direction": "positive"
+      },
+      {
+        "category": "REAL_ESTATE",
+        "n_actors": 2794,
+        "n_agentic": 2249,
+        "n_nonagentic": 545,
+        "pct_agentic": 80.5,
+        "coef_agentic": 0.0984,
+        "se": 0.0341,
+        "p_value": 0.0038766182747882725,
+        "significant": "True",
+        "direction": "positive"
+      },
+      {
+        "category": "LEAD_GENERATION",
+        "n_actors": 7915,
+        "n_agentic": 5889,
+        "n_nonagentic": 2026,
+        "pct_agentic": 74.4,
+        "coef_agentic": 0.0815,
+        "se": 0.0233,
+        "p_value": 0.0004649044678213775,
+        "significant": "True",
+        "direction": "positive"
+      },
+      {
+        "category": "AGENTS",
+        "n_actors": 590,
+        "n_agentic": 415,
+        "n_nonagentic": 175,
+        "pct_agentic": 70.3,
+        "coef_agentic": 0.0724,
+        "se": 0.0547,
+        "p_value": 0.18546452165988703,
+        "significant": "False",
+        "direction": "positive"
+      },
+      {
+        "category": "BUSINESS",
+        "n_actors": 2269,
+        "n_agentic": 2163,
+        "n_nonagentic": 106,
+        "pct_agentic": 95.3,
+        "coef_agentic": 0.0594,
+        "se": 0.0488,
+        "p_value": 0.22370098575129072,
+        "significant": "False",
+        "direction": "positive"
+      },
+      {
+        "category": "NEWS",
+        "n_actors": 1156,
+        "n_agentic": 938,
+        "n_nonagentic": 218,
+        "pct_agentic": 81.1,
+        "coef_agentic": 0.0556,
+        "se": 0.0538,
+        "p_value": 0.3010832661477799,
+        "significant": "False",
+        "direction": "positive"
+      },
+      {
+        "category": "AUTOMATION",
+        "n_actors": 5757,
+        "n_agentic": 3523,
+        "n_nonagentic": 2234,
+        "pct_agentic": 61.2,
+        "coef_agentic": 0.0373,
+        "se": 0.0226,
+        "p_value": 0.09860487553297606,
+        "significant": "False",
+        "direction": "positive"
+      },
+      {
+        "category": "SEO_TOOLS",
+        "n_actors": 1419,
+        "n_agentic": 1113,
+        "n_nonagentic": 306,
+        "pct_agentic": 78.4,
+        "coef_agentic": 0.0292,
+        "se": 0.061,
+        "p_value": 0.6322399942160847,
+        "significant": "False",
+        "direction": "positive"
+      },
+      {
+        "category": "ECOMMERCE",
+        "n_actors": 7085,
+        "n_agentic": 5644,
+        "n_nonagentic": 1441,
+        "pct_agentic": 79.7,
+        "coef_agentic": -0.0578,
+        "se": 0.0249,
+        "p_value": 0.020421455778377066,
+        "significant": "True",
+        "direction": "negative"
+      },
+      {
+        "category": "DEVELOPER_TOOLS",
+        "n_actors": 5591,
+        "n_agentic": 4523,
+        "n_nonagentic": 1068,
+        "pct_agentic": 80.9,
+        "coef_agentic": -0.0594,
+        "se": 0.0263,
+        "p_value": 0.023563474224009506,
+        "significant": "True",
+        "direction": "negative"
+      },
+      {
+        "category": "OTHER",
+        "n_actors": 1160,
+        "n_agentic": 970,
+        "n_nonagentic": 190,
+        "pct_agentic": 83.6,
+        "coef_agentic": -0.0752,
+        "se": 0.0656,
+        "p_value": 0.25118630255001406,
+        "significant": "False",
+        "direction": "negative"
+      },
+      {
+        "category": "JOBS",
+        "n_actors": 3751,
+        "n_agentic": 3042,
+        "n_nonagentic": 709,
+        "pct_agentic": 81.1,
+        "coef_agentic": -0.0764,
+        "se": 0.0404,
+        "p_value": 0.058666373131779255,
+        "significant": "False",
+        "direction": "negative"
+      },
+      {
+        "category": "MCP_SERVERS",
+        "n_actors": 380,
+        "n_agentic": 162,
+        "n_nonagentic": 218,
+        "pct_agentic": 42.6,
+        "coef_agentic": -0.1324,
+        "se": 0.052,
+        "p_value": 0.010830484229235382,
+        "significant": "True",
+        "direction": "negative"
+      }
+    ]
+  },
+  "scale_premiums": {
+    "per_tier": [
+      {
+        "tier": "Solo",
+        "n_actors": 1562,
+        "n_agentic": 971,
+        "n_nonagentic": 591,
+        "coef_agentic": 0.1334,
+        "se": 0.0424,
+        "p_value": 0.0016290824197594364
+      },
+      {
+        "tier": "Boutique",
+        "n_actors": 5974,
+        "n_agentic": 4424,
+        "n_nonagentic": 1550,
+        "coef_agentic": 0.2174,
+        "se": 0.028,
+        "p_value": 8.227653022682551e-15
+      },
+      {
+        "tier": "Mid",
+        "n_actors": 16585,
+        "n_agentic": 12937,
+        "n_nonagentic": 3648,
+        "coef_agentic": 0.183,
+        "se": 0.0168,
+        "p_value": 1.3210317564675407e-27
+      },
+      {
+        "tier": "Whale",
+        "n_actors": 27740,
+        "n_agentic": 21158,
+        "n_nonagentic": 6582,
+        "coef_agentic": -0.0978,
+        "se": 0.0118,
+        "p_value": 1.4869922354655982e-16
+      }
+    ],
+    "interaction_terms": {
+      "agentic_int": {
+        "coef": 0.1632,
+        "p": 0.0002
+      },
+      "agentic_int:C(dev_tier)[T.Boutique]": {
+        "coef": 0.0528,
+        "p": 0.3042
+      },
+      "agentic_int:C(dev_tier)[T.Mid]": {
+        "coef": 0.0288,
+        "p": 0.535
+      },
+      "agentic_int:C(dev_tier)[T.Whale]": {
+        "coef": -0.2889,
+        "p": 0.0
+      }
+    }
+  },
+  "concentration": {
+    "gini": {
+      "all_ppe": 0.9335,
+      "agentic": 0.9409,
+      "non_agentic": 0.8458,
+      "agentic_more_concentrated": true
+    },
+    "concentration_ratios": {
+      "top_1pct_agentic": {
+        "top_n_actors": 394,
+        "share_of_total_users": 0.7808
+      },
+      "top_1pct_non_agentic": {
+        "top_n_actors": 123,
+        "share_of_total_users": 0.4786
+      },
+      "top_5pct_agentic": {
+        "top_n_actors": 1974,
+        "share_of_total_users": 0.8981
+      },
+      "top_5pct_non_agentic": {
+        "top_n_actors": 618,
+        "share_of_total_users": 0.7123
+      },
+      "top_10pct_agentic": {
+        "top_n_actors": 3949,
+        "share_of_total_users": 0.9337
+      },
+      "top_10pct_non_agentic": {
+        "top_n_actors": 1237,
+        "share_of_total_users": 0.8033
+      }
+    },
+    "category_concentration": [
+      {
+        "category": "SOCIAL_MEDIA",
+        "n_actors": 5212,
+        "pct_agentic": 71.2,
+        "hhi": 399.6,
+        "gini": 0.9574
+      },
+      {
+        "category": "AUTOMATION",
+        "n_actors": 5757,
+        "pct_agentic": 61.2,
+        "hhi": 223.8,
+        "gini": 0.9047
+      },
+      {
+        "category": "ECOMMERCE",
+        "n_actors": 7085,
+        "pct_agentic": 79.7,
+        "hhi": 82.6,
+        "gini": 0.8121
+      },
+      {
+        "category": "LEAD_GENERATION",
+        "n_actors": 7915,
+        "pct_agentic": 74.4,
+        "hhi": 700.2,
+        "gini": 0.9508
+      },
+      {
+        "category": "OTHER",
+        "n_actors": 1160,
+        "pct_agentic": 83.6,
+        "hhi": 82.4,
+        "gini": 0.6457
+      },
+      {
+        "category": "DEVELOPER_TOOLS",
+        "n_actors": 5591,
+        "pct_agentic": 80.9,
+        "hhi": 95.0,
+        "gini": 0.7609
+      },
+      {
+        "category": "MARKETING",
+        "n_actors": 259,
+        "pct_agentic": 91.9,
+        "hhi": 751.1,
+        "gini": 0.7399
+      },
+      {
+        "category": "JOBS",
+        "n_actors": 3751,
+        "pct_agentic": 81.1,
+        "hhi": 463.6,
+        "gini": 0.9195
+      },
+      {
+        "category": "BUSINESS",
+        "n_actors": 2269,
+        "pct_agentic": 95.3,
+        "hhi": 60.3,
+        "gini": 0.524
+      },
+      {
+        "category": "AI",
+        "n_actors": 3875,
+        "pct_agentic": 74.7,
+        "hhi": 111.9,
+        "gini": 0.8138
+      },
+      {
+        "category": "MCP_SERVERS",
+        "n_actors": 380,
+        "pct_agentic": 42.6,
+        "hhi": 652.2,
+        "gini": 0.8905
+      },
+      {
+        "category": "AGENTS",
+        "n_actors": 590,
+        "pct_agentic": 70.3,
+        "hhi": 623.0,
+        "gini": 0.795
+      },
+      {
+        "category": "TRAVEL",
+        "n_actors": 1256,
+        "pct_agentic": 77.9,
+        "hhi": 1740.2,
+        "gini": 0.913
+      },
+      {
+        "category": "INTEGRATIONS",
+        "n_actors": 163,
+        "pct_agentic": 62.0,
+        "hhi": 667.2,
+        "gini": 0.8126
+      },
+      {
+        "category": "REAL_ESTATE",
+        "n_actors": 2794,
+        "pct_agentic": 80.5,
+        "hhi": 242.6,
+        "gini": 0.7796
+      },
+      {
+        "category": "EDUCATION",
+        "n_actors": 152,
+        "pct_agentic": 97.4,
+        "hhi": 112.5,
+        "gini": 0.3398
+      },
+      {
+        "category": "SEO_TOOLS",
+        "n_actors": 1419,
+        "pct_agentic": 78.4,
+        "hhi": 3198.6,
+        "gini": 0.9387
+      },
+      {
+        "category": "SPORTS",
+        "n_actors": 128,
+        "pct_agentic": 100.0,
+        "hhi": 510.4,
+        "gini": 0.7347
+      },
+      {
+        "category": "VIDEOS",
+        "n_actors": 868,
+        "pct_agentic": 67.4,
+        "hhi": 1536.7,
+        "gini": 0.9506
+      },
+      {
+        "category": "NEWS",
+        "n_actors": 1156,
+        "pct_agentic": 81.1,
+        "hhi": 302.2,
+        "gini": 0.7798
+      },
+      {
+        "category": "GAMES",
+        "n_actors": 58,
+        "pct_agentic": 94.8,
+        "hhi": 296.0,
+        "gini": 0.3391
+      }
+    ],
+    "agentic_concentration_correlation": {
+      "spearman_rho": -0.7405,
+      "p_value": 0.0001236790016768559
+    }
+  }
+}

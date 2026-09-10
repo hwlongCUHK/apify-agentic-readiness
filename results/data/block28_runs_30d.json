@@ -1,0 +1,21 @@
+{
+  "outcome": "log_runs_30d_total",
+  "n_ppe": 53502,
+  "n_eligible": 50917,
+  "fe_equal_dev": {
+    "coef": 1.1436,
+    "se": 0.1304,
+    "p": 1.8109589414047622e-18,
+    "pct": 213.8,
+    "n_developers": 343,
+    "n_actors": 16537
+  },
+  "fe_actor_weighted": {
+    "coef": 0.7308,
+    "se": 0.1515,
+    "p": 1.4203635726288182e-06,
+    "pct": 107.7,
+    "n_developers": 343,
+    "n_actors": 16537
+  }
+}

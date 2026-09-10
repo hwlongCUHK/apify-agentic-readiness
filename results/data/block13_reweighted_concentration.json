@@ -1,0 +1,12 @@
+{
+  "whitelisted": {
+    "gini": 0.9467,
+    "theil": 4.3429
+  },
+  "non_whitelisted": {
+    "gini": 0.8448,
+    "theil": 2.4642
+  },
+  "gini_gap": 0.1019,
+  "theil_gap": 1.8787
+}

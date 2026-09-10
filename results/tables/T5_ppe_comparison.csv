@@ -1,0 +1,3 @@
+agentic,n,avg_mu,med_mu,p75_mu,p90_mu,p95_mu,avg_runs,med_runs,avg_builds,avg_bookmarks
+False,12371,4.68,1.0,2.0,6.0,13.0,926.73,29.0,10.6,1.07
+True,39490,16.34,1.0,2.0,7.0,19.0,4467.13,29.0,17.7,1.99

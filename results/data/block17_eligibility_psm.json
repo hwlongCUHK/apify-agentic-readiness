@@ -1,0 +1,17 @@
+{
+  "n_eligible": 50917,
+  "n_non_eligible": 2585,
+  "ratio": 19.7,
+  "overlap_ato": {
+    "coef": 0.2171,
+    "pct": 24.3
+  },
+  "iptw_att": {
+    "coef": 0.1559,
+    "pct": 16.9
+  },
+  "match_1to1": {
+    "coef": 0.1922,
+    "pct": 21.2
+  }
+}

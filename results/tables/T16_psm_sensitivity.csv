@@ -1,0 +1,5 @@
+Estimator,log_mu coef,exp-1 %,SE,p,N treated
+"1:1 NN, no replacement (matched subset)",0.1526,16.5,0.0554,0.016,11881
+Matching with replacement (full treated),0.1391,14.9,0.0484,0.008,39490
+Overlap-weighted ATO (full sample),0.1475,15.9,0.0501,0.002,39490
+IPTW ATT (full sample),0.1361,14.6,0.0487,0.01,39490

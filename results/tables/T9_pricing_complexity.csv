@@ -1,0 +1,5 @@
+complexity_tier,n_actors,avg_median_price,avg_max_price,avg_mean_price
+1 event,11089,0.118905,0.1189,0.118905
+2-3 events,38017,0.028454,0.0667,0.033638
+4-5 events,2102,0.139016,0.5208,0.201574
+6+ events,658,0.049625,0.3713,0.105381

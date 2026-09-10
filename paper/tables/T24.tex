@@ -1,0 +1,19 @@
+\begin{table}[t]
+  \centering
+  \caption{Propensity-score matching for agentic readiness.}
+  \label{tab:eligibility_psm}
+  \small
+  \begin{tabular}{lcc}
+    \toprule
+    Estimator & $\hat\beta$ & exp-1 \\
+    \midrule
+    1:1 nearest-neighbor & 0.192 & +21.2\% \\
+    Overlap weighting (ATO) & 0.217 & +24.3\% \\
+    IPTW (ATT) & 0.156 & +16.9\% \\
+    \bottomrule
+    \multicolumn{3}{l}{\footnotesize Listing-time propensity score (age, description length,} \\
+    \multicolumn{3}{l}{\footnotesize portfolio size, category). Outcome is log-plus-one monthly users.} \\
+    \multicolumn{3}{l}{\footnotesize Treated:control = 19.7:1; 1:1 covers a minority of agentic-ready actors.} \\
+    \multicolumn{3}{l}{\footnotesize Balance: standardized log-age difference -0.90 before weighting, +0.23 after.}
+  \end{tabular}
+\end{table}

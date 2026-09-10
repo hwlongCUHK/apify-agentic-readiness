@@ -1,0 +1,111 @@
+% !TEX root = ../main.tex
+\section{Introduction}
+\label{sec:introduction}
+
+Automation tool marketplaces---platforms where developers publish reusable
+scripts, scrapers, and integrations---are being opened to a new kind of
+consumer: AI agents that autonomously discover, invoke, and pay for tools, a
+shift documented in census analyses of the MCP tool ecosystem
+\cite{stein2026mcpecosystem} and the GPT Store \cite{su2024gptstore}. For a tool
+to enter an agent's
+reach, however, it must first satisfy a platform-imposed architecture. On the
+Apify Store, a tool is \emph{agentic-ready} only if it runs with limited
+permissions and no standby mode. Agentic readiness is thus not a label a
+developer claims, but a set of architectural constraints the platform enforces
+on which tools machine consumers may touch. Yet little is known about how this
+readiness architecture shapes adoption and concentration across the
+marketplace.
+
+Automation tool marketplaces are a distinct platform
+type with four structural features: they host \emph{single-function} tools
+rather than the multi-feature applications that mobile app stores manage
+through update review \cite{comino2019appstore}, use
+predominantly \emph{usage-based}
+pricing rather than subscription or purchase models, organize tools through
+\emph{category taxonomies} for both human and programmatic discovery, and rely
+on open developer-side participation that produces a long-tailed distribution
+of activity. They are not app stores (tools are headless scripts, not
+interactive applications), not API marketplaces (tools encapsulate orchestrated
+workflows rather than exposing raw endpoints), and not integration platforms
+(tools are standalone rather than connectors between services). We describe
+these features concretely for Apify in \autoref{sec:context}.\label{sec:bg:automation}
+
+We analyze the \emph{Apify Store}, a public automation marketplace hosting
+67,609 tools (``actors'') built by 5,789 developers. We define a pay-per-event
+(PPE) tool as \emph{agentic-ready} when it is configured with limited
+permissions and no standby mode---two architectural properties that, in the
+platform's design, determine whether a tool can be autonomously discovered and
+invoked by agents. 50{,}917 of the 53{,}502 PPE tools with architecture data
+(95\%) satisfy this definition. We study how agentic readiness is associated
+with adoption and concentration, using within-developer fixed effects that
+compare agentic-ready and non-agentic-ready tools published by the \emph{same}
+developer.
+
+Prior work leaves four gaps: no empirical study of automation tool marketplaces
+as a distinct platform type, no quantification of the adoption gap associated
+with agentic readiness, no documentation of category-level heterogeneity in
+that gap, and no analysis of whether agentic readiness is associated with
+marketplace concentration. Our study addresses all four.
+
+This study's organizing question is: what adoption and concentration
+differences are associated with a platform's readiness boundary---the
+constraints it imposes on which tools machine consumers may use? We find three
+things.
+
+First, agentic readiness is strongly associated with adoption. Within the same
+developer---specifically the 343 who publish both agentic-ready and
+non-agentic-ready tools---agentic-ready tools attract a large positive mean
+adoption gap ($p < 10^{-10}$): 40\% to 72\% on the
+$\log(1+\text{monthly\_users})$ scale depending on weighting, and several-fold
+larger on the count scale; a within-developer similarity match confirms a positive mean premium of roughly 29\%,
+indicating that tool-type composition explains part of the raw gap but not all of it. Second, the association also appears on both the
+extensive and conditional intensive margins: agentic-ready tools are 17
+percentage points more likely to have any users at all, and, conditional on
+having users, they attract 60\% more on the log-plus-one scale. Third, the
+association is positive across
+categories---Bonferroni-significant in 7 of 15 under primary-category assignment
+and 12 of 18 under multi-hot, in tool-level regressions---but we find no robust
+evidence of higher concentration: Gini coefficients are nearly identical across
+agentic-ready and non-agentic-ready tools (0.935 versus 0.946), and upper-tail
+differences are too imprecisely estimated to be informative.
+
+Across these findings, the through-line is the readiness boundary: tools a
+platform configures for agent-initiated use attract substantially more
+adoption, without any detectable increase in concentration. This adoption
+premium is large and
+consistent. The observed premium attaches to platform readiness; distinguishing agent routing from correlated architectural choices requires agent-side traffic data.
+
+To understand how agentic readiness shapes marketplace stratification, we
+organize the analysis around three research questions:
+
+\begin{description}
+  \item[RQ1.] What is the adjusted association between agentic readiness and
+    tool adoption, after controlling for developer heterogeneity and tool
+    characteristics?
+  \item[RQ2.] On which margin of adoption does the association operate---the
+    extensive margin (any users) or the intensive margin (users conditional on
+    traction)---and which candidate mechanisms the data can and cannot rule
+    out?
+  \item[RQ3.] How does the association vary across tool categories, and is
+    agentic readiness associated with higher or lower within-group adoption
+    inequality?
+\end{description}
+
+This study makes two contributions to HCI and platform studies:
+
+\begin{enumerate}
+  \item \textbf{Quantifying the adoption premium of agentic readiness.} Within
+    the same developer, agentic-ready tools attract a large, consistently
+    positive adoption gap (40\% to 72\% on the log-plus-one scale) across both
+    the extensive and intensive margins, with no robust evidence of a
+    corresponding increase in within-group concentration.
+
+  \item \textbf{The admission boundary as a governance boundary.} This premium
+    reveals a design-relevant empirical signal: an automation marketplace's
+    permission architecture---the limited-permissions, non-standby criteria that
+    gate agent access---doubles as its discovery architecture, so access rules
+    allocate visibility across human users, agent users, and developers.
+\end{enumerate}
+
+We next describe the setting, data and methods, results, and their
+implications for dual-audience governance.

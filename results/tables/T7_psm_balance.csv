@@ -1,0 +1,5 @@
+Covariate,SMD (before),SMD (after)
+log_age,-0.1845,0.0224
+desc_length,0.0093,0.0197
+dev_portfolio_size,-0.134,0.0378
+Category (max),-0.2699,0.0566

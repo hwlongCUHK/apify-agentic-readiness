@@ -1,0 +1,14 @@
+{
+  "crawl_date": "2026-08-31",
+  "raw_file": "/Users/darrenlong/Desktop/Apify Project/data/raw/2026-08-31.jsonl.gz",
+  "actor_count": 65965,
+  "n_usernames_processed": 5689,
+  "n_errors": 0,
+  "n_truncated": 0,
+  "n_empty": 0,
+  "usernames_hash": "51f443baa76e45e96b27b0fa3829f336762145794a4af20f86ffb01822be3c04",
+  "usernames_file": "/Users/darrenlong/Desktop/Apify Project/data/raw/2026-08-31.usernames.json",
+  "started_at": "2026-08-31T21:16:01.246223+00:00",
+  "finished_at": "2026-08-31T22:51:20.408554+00:00",
+  "seconds": 5719.2
+}

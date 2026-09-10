@@ -1,0 +1,138 @@
+{
+  "interaction_test": {
+    "n_interaction_terms": 23,
+    "statistic": 6.736,
+    "df": 23,
+    "p": 3.3194248069572934e-17
+  },
+  "per_category_fe": [
+    {
+      "category": "VIDEOS",
+      "n_actors": 19,
+      "n_developers": 6,
+      "coef": 1.039,
+      "se": 1.1386,
+      "p": 0.3614859703605132,
+      "pct": 182.6
+    },
+    {
+      "category": "SEO_TOOLS",
+      "n_actors": 41,
+      "n_developers": 10,
+      "coef": 0.9187,
+      "se": 0.618,
+      "p": 0.1371566938164514,
+      "pct": 150.6
+    },
+    {
+      "category": "SOCIAL_MEDIA",
+      "n_actors": 479,
+      "n_developers": 49,
+      "coef": 0.9171,
+      "se": 0.244,
+      "p": 0.00017084774063533327,
+      "pct": 150.2
+    },
+    {
+      "category": "LEAD_GENERATION",
+      "n_actors": 1104,
+      "n_developers": 50,
+      "coef": 0.9043,
+      "se": 0.2868,
+      "p": 0.0016164485844880985,
+      "pct": 147.0
+    },
+    {
+      "category": "DEVELOPER_TOOLS",
+      "n_actors": 742,
+      "n_developers": 30,
+      "coef": 0.7254,
+      "se": 0.3206,
+      "p": 0.023665226434639534,
+      "pct": 106.6
+    },
+    {
+      "category": "ECOMMERCE",
+      "n_actors": 1282,
+      "n_developers": 48,
+      "coef": 0.6052,
+      "se": 0.2203,
+      "p": 0.006020606340361669,
+      "pct": 83.2
+    },
+    {
+      "category": "AUTOMATION",
+      "n_actors": 1352,
+      "n_developers": 57,
+      "coef": 0.5497,
+      "se": 0.1942,
+      "p": 0.0046435088363724,
+      "pct": 73.3
+    },
+    {
+      "category": "NEWS",
+      "n_actors": 29,
+      "n_developers": 6,
+      "coef": 0.4775,
+      "se": 0.2327,
+      "p": 0.040142989464640275,
+      "pct": 61.2
+    },
+    {
+      "category": "JOBS",
+      "n_actors": 205,
+      "n_developers": 17,
+      "coef": 0.4126,
+      "se": 0.3399,
+      "p": 0.22476678041796605,
+      "pct": 51.1
+    },
+    {
+      "category": "TRAVEL",
+      "n_actors": 64,
+      "n_developers": 7,
+      "coef": 0.3242,
+      "se": 0.265,
+      "p": 0.2212757858243659,
+      "pct": 38.3
+    },
+    {
+      "category": "REAL_ESTATE",
+      "n_actors": 311,
+      "n_developers": 19,
+      "coef": 0.192,
+      "se": 0.2886,
+      "p": 0.5057390124303915,
+      "pct": 21.2
+    },
+    {
+      "category": "AI",
+      "n_actors": 1410,
+      "n_developers": 54,
+      "coef": 0.1304,
+      "se": 0.189,
+      "p": 0.4900872198146903,
+      "pct": 13.9
+    },
+    {
+      "category": "MCP_SERVERS",
+      "n_actors": 77,
+      "n_developers": 6,
+      "coef": 0.0466,
+      "se": 0.123,
+      "p": 0.7045837921422319,
+      "pct": 4.8
+    },
+    {
+      "category": "AGENTS",
+      "n_actors": 127,
+      "n_developers": 9,
+      "coef": -0.1364,
+      "se": 0.2568,
+      "p": 0.5951595329721677,
+      "pct": -12.8
+    }
+  ],
+  "n_mixed_developers": 343,
+  "n_mixed_actors": 16537
+}

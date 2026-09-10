@@ -1,0 +1,81 @@
+\documentclass[manuscript,review,anonymous]{acmart}
+
+%%% Packages %%%
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\graphicspath{{figures/}}
+
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}
+\renewcommand{\subsubsectionautorefname}{Section}
+
+%%% ACM Metadata %%%
+\acmConference[CHI '27]{ACM CHI Conference on Human Factors in Computing Systems}{April 26--May 1, 2027}{Yokohama, Japan}
+\acmYear{2027}
+\acmISBN{}
+\acmDOI{}
+\acmPrice{}
+
+\setcopyright{none}
+
+\title{Admitting AI Agents: Agentic Readiness and Adoption in an Automation Marketplace}
+
+\begin{document}
+
+\begin{abstract}
+Automation tool marketplaces are increasingly opened to machine consumers---AI
+agents that autonomously discover, invoke, and pay for tools. On the Apify
+Store, this opening is architectural: a tool is \emph{agentic-ready}---eligible
+for agent-initiated use---only if it runs with limited permissions and no
+standby mode. We study how agentic readiness shapes marketplace outcomes, using
+a census of 67{,}609 tools from 5{,}789 developers (57{,}032 pay-per-event
+tools, 53{,}502 with architecture data) and within-developer fixed-effects
+models. Within the same developer---among the 343 who publish both tool
+types---agentic-ready tools attract a large positive mean adoption gap
+($p < 10^{-10}$): 40\% to 72\% on the
+$\log(1+\text{monthly\_users})$ scale depending on weighting (72\% under our
+preferred equal-developer-weighted estimator), and several-fold larger on the
+raw monthly-user count scale; a within-developer similarity match attenuates
+the gap to roughly 29\%, so the premium is partly a tool-type composition
+effect, but a positive mean premium persists. The association operates on both
+the extensive margin (a
+17-percentage-point higher probability of having any users) and the intensive
+margin (60\% more on the log-plus-one scale conditional on traction). The
+association is positive across most tool categories (Bonferroni-significant in 7 of 15
+under primary-category assignment, 12 of 18 under multi-hot), and the
+association survives excluding whale developers and is directionally
+triangulated by propensity-score weighting. In contrast, despite their higher
+adoption, we find no robust evidence of higher within-group concentration: Gini
+coefficients are nearly identical across the two sets (0.935 versus 0.946), and
+upper-tail differences are too imprecisely estimated to be informative. Because
+we observe readiness rather than agent use, the association may reflect agent
+routing, developer self-selection, the architecture's intrinsic appeal, or some
+combination. These findings surface a design-relevant empirical signal: the
+admission boundary doubles as a discovery and governance boundary---the same
+limited-permissions, non-standby requirements that gate agent access also
+decide which tools machine consumers can find at all---and a single metric like
+\texttt{monthly\_users} can no longer separate human- from agent-driven
+adoption.
+\end{abstract}
+
+\keywords{automation marketplace, agentic economy, platform governance, marketplace concentration, adoption gap}
+
+\maketitle
+
+\input{sections/01-introduction}
+\input{sections/02-background}
+\input{sections/03-context}
+\input{sections/04-method}
+\input{sections/05-results}
+\input{sections/06-discussion}
+\input{sections/07-conclusion}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

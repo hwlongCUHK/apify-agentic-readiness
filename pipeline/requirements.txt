@@ -1,0 +1,4 @@
+requests>=2.31
+duckdb>=0.10
+# optional: extra Parquet interop (DuckDB can COPY TO parquet natively without it)
+# pyarrow>=15
